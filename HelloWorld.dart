@@ -13,46 +13,52 @@ import 'dart:mirrors';
 
 void main() {
 //For new Line print('\n');
+  
   /*print('hello world');
 
   //Dart Data Type
+  
   //Var
+  
   var name = 'Dart and Flutter';
   print(name);
-
-  //name = 10;
+  //name = 10;//cant assign value to assign value use dynamic
   var number = 20;
-
-   //number = 'String text'
+  //number = 'String text'//cant assign value to assign value use dynamic
   print(number.runtimeType);
-   var booleanValue = true;
+  ar booleanValue = true;
   print(booleanValue.runtimeType);
-   var dou = 120.3;
+  var dou = 120.3;
   print(dou.runtimeType);
 
   //String
+  
   String str = '''To Master
   **********Flutter********
   FIrst Learn Dart Programming.....''';
   print(str);
 
   //int
+  
   int num = 2233255;
   print(num);
 
   //double
+  
   double d = 123.22;
   print(d);
 
   //Boolean
+  
   bool checkAnotherValue = false;
   print(checkAnotherValue);
 
   //dynamic
+  
   dynamic nameforDynamic = '''Data Structure **And** Algorithms''';
   print(nameforDynamic);
-  nameforDynamic = 8888;
-  print(nameforDynamic);
+  nameforDynamic = 8888;//to assign value use dynamic
+  print(nameforDynamic);// now changed
   print(nameforDynamic.runtimeType);
 
   //Concatination
@@ -71,33 +77,66 @@ void main() {
   print('After adding using Curly Braces: ${numberone + numbertwo}');
 
   //Double and Single Quotes with Apostrophis
-  print(" hello I\"  am Practicing Dart Language");
-  print('hello I\"  am Practicing "Dart basic\'s Languages');
-  print(r'hello I\"  am \\\Practicing Dart \\\\\Language');
+  
+  print("hello"  am Practicing Dart Language");// Double quotes k andar tum double quotes print nahi kara sakte
+  
+  print('hello"  am Practicing Dart Language ');//but Single quotes k andar tum double quotes print kara sakte ho
+  
+  print("hello I\"  am Practicing Darts Language");// ab tum print kara sakte ho ye backword slash ki waja se ye \ comipler ko consider karata hai ki ab ye string hai
+  
+  print(r"hello I\\  am\  Practicing Dart basic's 'Languages");// Ab ye sab print karne k liye r matlab raw ka use karte hain using double quotes ptint(r"");
+  
+  print(r'hello I\"  am \\\Practicing Dar\'t \\\\\Language'); Ab ye sab print karne k liye r matlab raw ka use karte hain using single quotes ptint(r'');
 
+  Find String length using method
+  
   String textforString = "Learn Dart Effectively while Practing..";
-
   print(textforString.length);
 
   //SingleDoubleTripple Quotes
+  
   String singleDoubleTripple = "Best"
       "Framework "
       "for "
       "HybridApp "
       "ie "
       "Flutter"
-      ".........";
-  String singleDoubleTrippleString = """Best
+      "........."; 
+      
+      output be like BestFramework for HybridApp ie Flutter......... 
+      
+      not like this:->
+            "Best"
+      "Framework "
+      "for "
+      "HybridApp "
+      "ie "
+      "Flutter"
+      "........."
+      
+      But if u want to like same as you want then use """ quotes example below
+      
+      String singleDoubleTrippleString = """Best
                                     Framework
                                          >>for
                                             >>Hybrid
                                                 >>App
                                                   >>ie
                                                      >>Flutter.........""";
-  print(singleDoubleTripple);
-  print(singleDoubleTrippleString);
+      print(singleDoubleTrippleString);
+  
+      it will print same as you have asssign your value like this 
+  
+          Best
+      Framework
+          >>for
+              >>Hybrid
+                  >>App
+                    >>ie
+                        >>Flutter.........
 
   //Null Value
+  
   String stringNull;
   int intNull;
   var varNull;
@@ -107,95 +146,154 @@ void main() {
   print(intNull);
   print(varNull);
   print(booleanNull);
+-------------------------------------------------------------------------------------------------------------------------------------------
+                                               //Taking Input Values from User
+                                              _________________________________
+                                              
+      print("Enter Your Intresting  Framework Name:");
 
-  //Taking Input Values from User
-  print("Enter Your Intresting  Framework Name:");
+      //stdin.readLineSync();// std.in is for taking user value
+  
+      String stringTakingInputFromUser  = stdin.readLineSync();
+      
+      print('User has given input such as this $stringTakingInputFromUser');
 
-  String stringTakingInputFromUser  = stdin.readLineSync();
+      //stdout.write(); //stdout.write is for print user written value
+  
+      stdout.write("You have typed this $stringTakingInputFromUser");
+      
+        (1) /Output will be this: userinput : Flutter
+              --> You have typed this Flutter
+                  User has given input such as this Flutter //  use print() for breaks the line
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------     
+          
+  
+        print("Enter Your Intresting  Framework Name:");
 
-  //By Using stdout.write();
-  stdout.write("You have typed this $stringTakingInputFromUser");
+        //By Using stdin.readLineSync();// std.in is for taking user value
+  
+        String stringTakingInputFromUser  = stdin.readLineSync();
 
-  //By Using print();
-  print('User has given input such as this $stringTakingInputFromUser');
- //Output will be this: Flutter
-  // You have typed this FlutterUser has given input such as this Flutter
-
+        stdout.write("You have typed this $stringTakingInputFromUser");
+      
+        print('User has given input such as this $stringTakingInputFromUser');
+          
+         (2)//Output will be this: userinput : Flutter
+              --> You have typed this FlutterUser has given input such as this Flutter //no break line to avoid this use use stdout.writeln() for breaks the line
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   //If you want to new Line in You OutPut juswrite #ln in std.write() method check it below code
+  
   print("Enter Your Intresting  Framework Name:");
-
+  
   String stringTakingInputFromUserForNewLine  = stdin.readLineSync();
-
-  //By Using stdout.write();
+  
   stdout.writeln("You have typed this $stringTakingInputFromUserForNewLine");
-
-  //By Using print();
+  
   print('User has given input such as this $stringTakingInputFromUserForNewLine');
+  
+ (3)/Output will be this: userinput : Flutter
+              --> You have typed this Flutter
+                  User has given input such as this Flutter //  use stdout.writeln() for breaks the line
+                  
+               Note:    
+                       // stdin.readLineSync()// For taking user Values
+                        //stdout.write("You have typed this $stringTakingInputFromUser");//No breaks the Line and print for user written values
+                         //stdout.writeln("You have typed this $stringTakingInputFromUser");//Yes Breaks the Line
+                            //stdout.writeall("You have typed this $stringTakingInputFromUser");// Print All Users Written Values in a single Line
+                            
+                            for Ex. stdout.write.All(['kasim','aasim','Rasij', " "]);
+                            o/p: kasim asim Rasij
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------              
 
-print('******************************************************************************');
-  print("Now below is new Topics...   ");
-
-
-  //stdout.writeln("You have typed this $stringTakingInputFromUser");
-
-  //stdout.writeall("You have typed this $stringTakingInputFromUser");
-  //Converting String into Integer
-  print("""*********String to Integer**********""");
-String stringToInteger = '187672524';
-print('printing defined value.. $stringToInteger');
-print('printing data type of that initialized value is below...');
-print(stringToInteger.runtimeType);
-int afterconvertingStringintoInteger = int.parse(stringToInteger);
-print('Converted String to Integer Successfully and its data type is below: $afterconvertingStringintoInteger');
-print(afterconvertingStringintoInteger.runtimeType);
+print("""*********String to Integer**********""");
+  
+        String stringToInteger = '187672524';
+        
+        print('printing defined value.. $stringToInteger');
+        print('printing data type of that initialized value is below...');
+        print(stringToInteger.runtimeType);
+        
+        int afterconvertingStringintoInteger = int.parse(stringToInteger);//
+        
+        print('Converted String to Integer Successfully and its data type is below: $afterconvertingStringintoInteger');
+        print(afterconvertingStringintoInteger.runtimeType);
 
   print("""*********String to Double**********""");
-  String stringToDouble = '187672524';
-  print('printing defined value.. $stringToDouble');
-  print('printing data type of that initialized value is below...');
-  print(stringToDouble.runtimeType);
-  double afterconvertingStringintoDouble = double.parse(stringToDouble);
-  print('Converted String to Double Successfully and its data type is below: $afterconvertingStringintoDouble');
-  print(afterconvertingStringintoDouble.runtimeType);
+  
+        String stringToDouble = '187672524';
+        
+        print('printing defined value.. $stringToDouble');
+        print('printing data type of that initialized value is below...');
+        print(stringToDouble.runtimeType);
+        
+        double afterconvertingStringintoDouble = double.parse(stringToDouble);//
+        
+        print('Converted String to Double Successfully and its data type is below: $afterconvertingStringintoDouble');
+        print(afterconvertingStringintoDouble.runtimeType);
 
 //Converting Integer into String
-  print("""****Integer to String****""");
-  int integerToString = 12321;
-  print('printing defined value.. $integerToString');
-  print('printing data type of that initilized value is below...');
-  print(integerToString.runtimeType);
-  String afterconvertingIntegerintoString = integerToString.toString();
-  print('Converted Integer to String Successfully and its data type is below: ${afterconvertingIntegerintoString}');
-  print(afterconvertingIntegerintoString.runtimeType);
 
- print("---------------------------------***************************-------------------------------------------------");
+        print("""****Integer to String****""");
+        
+        int integerToString = 12321;
+        
+        print('printing defined value.. $integerToString');
+        print('printing data type of that initilized value is below...');
+        print(integerToString.runtimeType);
+        
+        String afterconvertingIntegerintoString = integerToString.toString();//
+        
+        print('Converted Integer to String Successfully and its data type is below: ${afterconvertingIntegerintoString}');
+        print(afterconvertingIntegerintoString.runtimeType);
+
+
+ 
  print("Enter Your Inger Value..");
+ 
  // int takingIntegerNumberFromUser = stdin.readLineSync() as int;
+ 
   int takingIntegerNumberFromUser = int.parse(stdin.readLineSync());
+  
   double takingDoubleInputNumberFromUser = double.parse(stdin.readLineSync());
+  
   stdout.writeln('User Entered Integer value printing... $takingIntegerNumberFromUser');
+  
   stdout.writeln('User Entered Double value printing........$takingDoubleInputNumberFromUser');
+  
   print('Here we are done');
+  
   stdin.readLineSync();//jab kuch likhoge to tabhi output ayega..
-  stdout.writeAll(['Java','Dart','Flutter'],"* ,");//yaha coma bhi de sakte ho output will be like Java,Dart,Flutter
+  
+  stdout.writeAll(['Java','Dart','Flutter'],"* ,");//yaha coma bhi de sakte ho output will be like Java,Dart,Flutter and for space be like -->  , " "
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   //Final And Const  (and defined data  is optional after writing *final and *const)
+  
  // The final variable 'finalValueOfString' can only be set once.
+ 
  // Constant variables can't be assigned a value.
 
   final String finalValueOfString = "I am Final Value I can only be set once";
+  
   //finalValueOfString = "sorry! I can only be set once!";  error message->//The final variable 'finalValueOfString' can only be set once.
+  
     final int finalValueOfInteger = 12321;
+    
     print('printing value of final... $finalValueOfString');
+    
   print('printing value of final... $finalValueOfInteger');
+  
     const double constValueForPi = 3.14;
+    
     //constValueForPi = 3.344;//Constant variables can't be assigned a value.
+    
   print('printing value of const...and Constant variables can\'t be assigned a value. $constValueForPi');
+  
   const String  nameofFinalString =  "Final String";
+  
   print(nameofFinalString);
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   //Variable
 
  You can use variable like for ex.
@@ -223,7 +321,7 @@ print(numberwithInteger1);
 
  int AGE = 33;
  print(AGE);
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Operators
   1. Arithmatic
   2. Assignment
@@ -231,7 +329,7 @@ print(numberwithInteger1);
   4. Type Test
   5. Logical
   6. Biwise
-  7. Conditional
+  7. Conditional Or Ternary 
 
 
 
@@ -437,8 +535,8 @@ print(numberwithInteger1);
   var numberForTernary = 30;
   var numberOutput = numberForTernary%2 == 0 ? "Value is Even!" : "Value is Odd!";
   print(numberOutput);
-
-
+.........................................................................................................................................................................
+/*
   //8. Casecade Notation
   //An Example class with member attributes and methods
   //Instantiating two Example objects
@@ -457,6 +555,7 @@ print(numberwithInteger1);
   eg2.bSetter(53);
   eg2.printValues();
 }
+
 class Example{
   var a;
   var b;
@@ -502,16 +601,19 @@ class Demo{
     print(this.a);
     print(this.b);
   }
+*/
+...............................................................................................................................................................................
 
-
-
-  //List :> Dart List is  similar to an array, which is the order collection of the objects
+    //List :> Dart List is  similar to an array, which is the order collection of the objects.
+  
   //Types of List?
+  
   //1. Mixed Type of List
-  //2. SPecified List
+  //2. Specified List
   //3.Growable List
 
   //1. Mixed Type of List
+  
   var varForList = new  List(5);
   // var listForVar1 = new List(10);
   // var listOfVar2 = new List(20);
@@ -533,6 +635,7 @@ class Demo{
   // (500, 400, String Value, 200, 100)
 
   //2. Specified List
+  
   List<String> listForString = new List(5);
   listForString[0] = "String Value1";//Here you cannot assign int value;
   listForString[1] = "String Value2";
@@ -633,9 +736,11 @@ class Demo{
   print(randomGrowableList.last);
   print(randomGrowableList.reversed);
   //print(randomGrowableList.single); to check 1 element is or not on the list which means it gives true or false value
-
+  
+.................................................................................................................................................................................
 
   //Dart Sets
+  
   //Set main Same to Same Value Ek hi bar Ata hai
   //The Dart Set is unordered Collection of the different values of the same type.
   //Set Main Union Intersection bhi hota hai jo hum log Class 11th 12thain Padhe the.
@@ -688,6 +793,7 @@ class Demo{
   //
 
   //Integer Set
+  
   // Set<int>  integrSetList = <int>{};
   // integrSetList.add(10);
   // integrSetList.add(20);
@@ -737,9 +843,10 @@ class Demo{
   print("Before Checking Diffrence Set One $setOneForDifference and Set Two $setTwoForDifference");
   print('After Checking Diffrence of Both.. ${setOneForDifference.difference(setTwoForDifference)}');
 
-
+.............................................................................................................................................................................
 
           //MAP
+          
   //Dart Map is an Object that stores data in the  form of a key - value pair.
   //Each Value is assciated with its key, and it is used to access its corresponding value.
   //Both keys and Values can be any type.
@@ -763,12 +870,13 @@ class Demo{
     mapForUserStudent.forEach((key, value) =>print({"$key:$value"}));
     mapForUserStudent.clear();
     print(mapForUserStudent);
-
+................................................................................................................................................................................
   //Control Flow Statements
+  
     //1.Decision Statement -> I. if, if else, if else if II. Switch
     //2.Looping Statement ->  I. For II. While III. Do While
     //3.Jumping Statement ->  I. Continue II.Break
-
+................................................................................................................................................................................
   //1.Decision Statements
 
     //I.If & Else If, IF Else IF, Nested If Else IF
@@ -864,7 +972,7 @@ class Demo{
   //
   //
   // }
-
+..............................................................................................................................................................................
   // 2. Looping Statement
 
   //1. FOr Loop to count number 1 to 100
@@ -875,21 +983,25 @@ class Demo{
   // }
 
   // creating variable inside the loop;
+  
   // for(int forLoop; forLoop <= 100/2; ++forLoop ){
   //   print(forLoop);
   // }
 
   //FOR IN LOOP
+  
   // var list = [10,20,30,40,50,60,70,80,90];
   // for(var iforPrntingListElement in list){
   //   print(iforPrntingListElement);
   // }
 
   //FOR EACH LOOP
+  
   // var listforForEachLoop = [10,20,30,40,50,60,70,80,90];
   // listforForEachLoop.forEach((element) =>({print(element)}));
 
   //While Loop
+  
   //Adding Given Each number and print sum of that number!
   // int numberForSum = 123456;
   // int remainder;
@@ -923,6 +1035,7 @@ class Demo{
   //  }
 
   //Do While Loop
+  
  //  var numFirst = 101;
  //  var maximum = 100;
  //
@@ -934,18 +1047,32 @@ class Demo{
  // while(numFirst<=maximum);
  // print(numFirst);
 
+...............................................................................................................................................................................
 
   //3.Jumping Statement
-  //1. Continue matlab Skip karna value ko or uske bad continue karna
-  // var valueForContinue = 10;
-  // for(valueForContinue; valueForContinue<20; ++valueForContinue){
-  //   if(valueForContinue == 15){
-  //     continue;
-  //   }
-  //   print(valueForContinue);
-  // }
+      1.Break 
+      2.Continue
+  
+  1. Continue matlab Skip karna value ko or uske bad continue karna
+   var valueForContinue = 10;
+   for(valueForContinue; valueForContinue<20; ++valueForContinue){
+     if(valueForContinue == 15){
+       continue;
+    }
+     print(valueForContinue);
+   }
+   
+    2. Break matlab program terminate karna jaise hi 5 aya baki ka value print nahi karega
+    
+   var valueForContinue = 10;
+   for(valueForContinue; valueForContinue<20; ++valueForContinue){
+     if(valueForContinue == 5){
+       continue;
+    }
+     print(valueForContinue);
+   }
 
-
+.........................................................................................................................................................................
 
   //Function
 
