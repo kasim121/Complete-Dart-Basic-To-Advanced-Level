@@ -1064,12 +1064,12 @@ class Demo{
    
     2. Break matlab program terminate karna jaise hi 5 aya baki ka value print nahi karega
     
-   var valueForContinue = 10;
-   for(valueForContinue; valueForContinue<20; ++valueForContinue){
-     if(valueForContinue == 5){
-       continue;
+   var valueForBreak = 10;
+   for(valueForBreak; valueForBreak<20; ++valueForBreak){
+     if(valueForBreak == 5){
+       break;
     }
-     print(valueForContinue);
+     print(valueForBreak);
    }
 
 .........................................................................................................................................................................
@@ -1157,3 +1157,216 @@ class Demo{
 //   int result;
 //   result = a - b;
 // }
+
+  Dart Anonymous Function
+    //anonymous function ka matlab hai ki jo function name nahi rehta hai wo anonymous fuction hota hai its like does not exist
+    
+   1) void main(){
+    var  numList = [20,30,40,50];
+    numList.forEach(printnumList);//for each is like a for loop
+    
+
+
+  }
+  printnumList(element){
+  print(element);
+  }
+
+ --------------------------------------- 
+   
+  2) void main()
+    {
+    
+      var  numList1 = [20,30,40,50];
+    
+      numList1.forEach(
+      
+          (element){
+            print(element);
+          }
+      
+      );   
+    }
+
+...............................................................................................
+  
+Recursion Function with Factorial 
+  
+  void main(){
+      var num =  5;
+      var  fact = factorial(num);
+      print('factorial is : ${fact}');
+    
+
+
+    }
+
+    int factorial(int num){
+      
+      if(num <= 1){
+        return 1;
+      }else{
+        return num*factorial(num-1);
+      }
+    }
+
+OP : factorial is : 120
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Exception Handling
+  
+---------------------------------------------------------
+using on
+
+    void main()
+    {
+      
+      try{
+        int number = 20~/0;
+      
+         }on IntegerDivisionByZeroException catch(e){
+            print(e);
+         }finally{
+            print("run");
+            print("If any errors occurs");
+           }
+      
+   }
+-------------------------------------------------------
+  using catch
+    
+    void main()
+    {
+      
+      try{
+        int number = 20~/0;
+      
+         }on catch(e){
+            print(e);
+         }finally{
+            print("run");
+            print("If any errors occurs");
+           }
+      
+   }
+------------------------------------------------------
+  FormatException
+  
+main() { 
+   try { 
+      test_age(-12); 
+   } 
+   catch(e) { 
+      print('Age cannot be negative'); 
+   } 
+}  
+void test_age(int age) { 
+   if(age<0) { 
+      throw new FormatException(); 
+   } 
+}
+  
+----------------------------------------------------------
+
+
+Customized Exception
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
