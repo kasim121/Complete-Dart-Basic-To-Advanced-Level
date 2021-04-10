@@ -1243,7 +1243,7 @@ using on
       try{
         int number = 20~/0;
       
-         }on catch(e){
+         }catch(e){
             print(e);
          }finally{
             print("run");
@@ -1271,7 +1271,7 @@ void test_age(int age) {
 ----------------------------------------------------------
 
 
-Customized Exception
+ Customized Exception
 
 
 
