@@ -1308,6 +1308,287 @@ $ initializer_lists.dart
 x: 2 y: 3
 rad: 0.5880026035475675
 
+----------------------------------------------------------------------------------
+  
+  
+  
+  Typedef in Dart
+Last Updated : 08 Oct, 2020
+Typedef in Dart is used to create a user-defined identity (alias) for a function, and we can use that identity in place of the function in the program code.
+When we use typedef we can define the parameters of the function.
+
+Syntax: typedef function_name ( parameters );
+With the help of typedef, we can also assign a variable to a function.
+
+Syntax:typedef variable_name = function_name;
+After assigning the variable, if we have to invoke it then we go as:
+
+Syntax: variable_name( parameters );
+
+  
+  // Dart program to show the usage of typedef
+
+// Defining alias name
+typedef GeeksForGeeks(int a, int b);
+
+// Defining Geek1 function
+Geek1(int a, int b) {
+print("This is Geek1");
+print("$a and $b are lucky geek numbers !!");
+}
+
+// Defining Geek2 function
+Geek2(int a, int b) {
+print("This is Geek2");
+print("$a + $b is equal to ${a + b}.");
+}
+
+// Main Function
+void main()
+{
+// Using alias name to define
+// number with Geek1 function
+	GeeksForGeeks number = Geek1;
+// Calling number
+number(1,2);
+
+// Redefining number
+// with Geek2 function
+number = Geek2;
+// Calling number
+number(3,4);
+}
+-------------------------------------------------------------------------------------
+
+
+Enumerated types
+  
+Also known as "enums", enumerated types are containers for constant values that can be declared
+with the enum keyword. A very straightforward example is the following:
+
+enum Fruits { Apple, Pear, Grapes, Banana, Orange }
+void main() {
+Fruits liked = Fruits.Apple;
+var disliked = Fruits.Banana;
+print(liked.toString()); // prints 'Fruits.Apple'
+print(disliked.toString()); // prints 'Fruits.Banana'
+}
+
+Each item of the enum has an associated number, called index, which corresponds to the zerobased position of the value in the declaration.
+You can access this number by using the index
+property.
+enum Fruits { Apple, Pear, Grapes, Banana, Orange }
+void main() {
+var a = Fruits.Apple.index; // 0
+var b = Fruits.Pear.index; // 1
+var c = Fruits.Grapes.index; // 2
+}
+
+Note that when you need to use an enum you always have to fully qualify it. Using the name only
+doesn’t work.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Assertions
+  
+While writing the code you can use assertions to throw an exception 1
+if the given condition
+evaluates to false. For example:
+  
+  
+  Syntax: assert(condition);
+  
+  
+  
+void main()
+{
+  String geek = "Geeks For Geeks";
+  assert(geek != "Geeks For Geeks");
+  print("You Can See This Line Geek as a Output");
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     Optional Positional Parameter
+  
+  To specify optional positional parameters, use square [] brackets.
+
+Syntax
+void function_name(param1, [optional_param_1, optional_param_2]) { } 
+If an optional parameter is not passed a value, it is set to NULL.
+
+Example
+Live Demo
+void main() { 
+   test_param(123); 
+}  
+test_param(n1,[s1]) { 
+   print(n1); 
+   print(s1); 
+} 
+It should produce the following output−
+
+123 
+null 
+  
+  
+  
+  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+  
+  Optional Named Parameter
+  
+Unlike positional parameters, the parameters’ name must be specified while the value is being passed. 
+Curly brace {} can be used to specify optional named parameters.
+  
+Syntax - Declaring the function
+    
+void function_name(a, {optional_param1, optional_param2}) { } 
+
+Syntax - Calling the function
+  
+  
+function_name(optional_param:value,…);
+  
+  void main() { 
+   test_param(123); 
+   test_param(123,s1:'hello'); 
+   test_param(123,s2:'hello',s1:'world'); 
+}  
+test_param(n1,{s1,s2}) { 
+   print(n1); 
+   print(s1); 
+} 
+  
+  
+  op:
+
+123 
+null 
+123 
+hello 
+123 
+world 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------
+  Optional Parameter with Default
+  
+  Function parameters can also be assigned values by default. However, such parameters can also be explicitly passed values.
+
+Syntax
+function_name(param1,{param2= default_value}) { 
+   //...... 
+} 
+Example
+Live Demo
+void main() { 
+   test_param(123); 
+}  
+void test_param(n1,{s1:12}) { 
+   print(n1); 
+   print(s1); 
+}   
+It should return the following output−
+
+123 
+12 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+                 Function
+  
+  Sr.No	Functions     &    Description
+  
+1  Defining a Function      A function definition specifies what and how a specific task would be done.
+
+2	Calling a Function          A function must be called so as to execute it.
+
+3	Returning Functions         Functions may also return value along with control, back to the caller.
+
+4	Parameterized Function      Parameters are a mechanism to pass values to functions.
+  
+  ----------------------------------------------------------------------------------------------------------------------------
+  Simple Function Definition
+  
+test() { 
+   //function definition 
+   print("function called"); 
+}
+  
+ ------------------------ 
+  Calling a Function
+    
+  void main() { 
+   test(); 
+}  
+test() { 
+   //function definition 
+   print("function called"); 
+} 
+op:
+function called
+-------------------------------
+ Returning Function
+  
+  void main() { 
+   print(test()); 
+}  
+String test() { 
+   // function definition 
+   return "hello world"; 
+}
+op:
+hello world
+  -------------------------------
+    void main() { 
+   test_param(123,"this is a string"); 
+}  
+test_param(int n1,String s1) { 
+   print(n1); 
+   print(s1); 
+} 
+op:
+123 
+this is a string 
+ ----------------------------------------------------------------------------------------------------------- 
+  
+  Recursive Dart Functions
+  
+ Recursion is a technique for iterating over an operation by having a function call to itself repeatedly until it arrives at a result.  
+ Recursion is best applied when you need to call the same function repeatedly with different parameters from within a loop.
+
+  void main() { 
+   print(factorial(5));
+}  
+factorial(number) { 
+   if (number <= 0) {         
+      // termination case 
+      return 1; 
+   } else { 
+      return (number * factorial(number - 1));    
+      // function invokes itself 
+   } 
+} 
+  op: 120
+ ------------------------------------------------------------------------------------------------------------------ 
+  
+  Lambda Functions
+
+    Lambda functions are a concise mechanism to represent functions. These functions are also called as Arrow functions.
+
+    Syntax
+    [return_type]function_name(parameters)=>expression;
+
+
+void main() { 
+   printMsg(); 
+   print(test()); 
+}  
+printMsg()=>
+print("hello"); 
+
+int test()=>123;                       
+// returning function
+It should produce the following output −
+
+hello 123 
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 
 
@@ -1316,3 +1597,16 @@ rad: 0.5880026035475675
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
