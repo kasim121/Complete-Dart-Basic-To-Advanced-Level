@@ -536,7 +536,7 @@ print(numberwithInteger1);
   var numberOutput = numberForTernary%2 == 0 ? "Value is Even!" : "Value is Odd!";
   print(numberOutput);
 .........................................................................................................................................................................
-/*
+
   //8. Casecade Notation
   //An Example class with member attributes and methods
   //Instantiating two Example objects
@@ -601,7 +601,7 @@ class Demo{
     print(this.a);
     print(this.b);
   }
-*/
+
 ...............................................................................................................................................................................
 
     //List :> Dart List is  similar to an array, which is the order collection of the objects.
@@ -1119,7 +1119,6 @@ class Demo{
 //
 // functionInsideFunction(1000);//ab ye run ho jayega void k andar likhne se print function
 
-*/
 
 
   //Dynamic Functiion
