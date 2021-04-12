@@ -358,3 +358,2355 @@ main(List<String> arguments) {
   if (secondNum == null) print("It is true.");
   else print("it is false, because the 'secondNUm' has the value of ${secondNum} now.");
 }
+//code 2.1
+
+main(List<String> arguments) {
+  bool firstButtonTouch = true;
+  bool secondButtonTouch = false;
+  bool thirdButtonTouch = true;
+  bool fourthButtonTouch = false;
+
+  if(firstButtonTouch) print("The giant starts running.");
+  else print("To stop the giant please touch the second button.");
+
+  if(secondButtonTouch) print("The giant stops.");
+  else print("You have not touched the second button.");
+
+  print("Touch any button to start the game.");
+
+  if(thirdButtonTouch) print("The giant goes to sleep.");
+  else print("You have not touched any button.");
+
+  if(fourthButtonTouch) print("The giant wakes up.");
+  else print("You have not touched any button.");
+}
+
+
+//code 2.2
+main(List<String> arguments) {
+  bool firstButtonTouch = true;
+  var firstButtonUntouch;
+  bool secondButtonTouch = false;
+  bool thirdButtonTouch = true;
+  bool fourthButtonTouch = false;
+  firstButtonUntouch ??= firstButtonTouch;
+  firstButtonUntouch = false;
+
+  if (firstButtonUntouch == false || firstButtonTouch == true) print("The giant is sleeping.");
+  else print("You need to wake up the giant. Touch the first button.");
+
+  if(firstButtonTouch == true && firstButtonUntouch == false) print("The giant starts running.");
+  print("To stop the giant please touch the second button.");
+
+  if((secondButtonTouch == true && thirdButtonTouch == true) || fourthButtonTouch == false) print("The giant stops.");
+  else print("You have not touched the second button.");
+
+  print("Touch any button to start the game.");
+
+  if(thirdButtonTouch) print("The giant goes to sleep.");
+  else print("You have not touched any button.");
+
+  if(fourthButtonTouch) print("The giant wakes up.");
+  else print("You have not touched any button.");
+}
+
+
+
+//code 2.3
+main(List<String> arguments) {
+  bool firstButtonTouch = true;
+  var firstButtonUntouch;
+  bool secondButtonTouch = false;
+  bool thirdButtonTouch = true;
+  bool fourthButtonTouch = false;
+  firstButtonUntouch ??= firstButtonTouch;
+  firstButtonUntouch = false;
+
+  if (firstButtonUntouch == false || firstButtonTouch == true) print("The giant is sleeping.");
+  else if (thirdButtonTouch) print("You need to wake up the giant. Touch the first button.");
+  else if(firstButtonTouch == true && firstButtonUntouch == false) print("The giant starts running.");
+  else if (secondButtonTouch) print("To stop the giant please touch the second button.");
+  else if((secondButtonTouch == true && thirdButtonTouch == true) || fourthButtonTouch == false) print("The giant stops.");
+  else if (thirdButtonTouch) print("You have not touched the second button.");
+  else if (secondButtonTouch) print("Touch any button to start the game.");
+  else if(thirdButtonTouch) print("The giant goes to sleep.");
+  else if (firstButtonUntouch) print("You have not touched any button.");
+
+  if(fourthButtonTouch) print("The giant wakes up.");
+  else print("You have not touched any button.");
+}
+
+
+//code 2.4
+main(List<String> arguments) {
+  var proverb = StringBuffer('As Dark as a Dungeon.');
+
+  for(var x = 0; x <= 10; x++){
+    proverb.write("!");
+    print(proverb);
+  }
+}
+
+//code 2.5
+main(List<String> arguments) {
+  Set mySet = {1, 2, 3};
+  var myProducts = {
+    1 : 'TV',
+    2 : 'Refrigerator',
+    3 : mySet.lookup(2),
+    4 : 'Tablet',
+    5 : 'Computer'
+  };
+  var userCollection = {"name": "John Smith", 'Email': 'john@sanjib.site'};
+
+  myProducts.forEach((x, y) => print("${x} : ${y}"));
+  userCollection.forEach((k,v) => print('${k}: ${v}'));
+}
+
+//code 2.6
+main(List<String> arguments) {
+  var myCollection = [1, 2, 3, 4];
+
+  for(var x in myCollection){
+    print("${x}");
+  }
+}
+
+
+//code 2.7
+main(List<String> arguments) {
+  var num = 5;
+  var factorial = 1;
+  print("The value of the variable 'num' is decreasing this way:");
+
+  while(num >=1) {
+    factorial = factorial * num;
+    num--;
+    print("'=>' ${num}");
+  }
+  print("The factorial  is ${factorial}");
+}
+
+
+//code 2.9
+main(List<String> arguments) {
+  var num = 5;
+  var factorial = 1;
+
+  do {
+    factorial = factorial * num;
+    num--;
+    print("The value of the variable 'num' is decreasing to : ${num}");
+    print("The factorial  is ${factorial}");
+  }
+  while(num >=1);
+}
+
+
+//code 2.11
+main(List<String> arguments) {
+  //that could be the input value that would take inputs from users
+  var startingTime = 5;
+  switch (startingTime) {
+    case 5:
+      print("Printer Ready");
+      break;
+    case 6:
+      print("Start printing");
+      break;
+    case 7:
+      print("Stop for a second");
+      break;
+    case 8:
+      print("Loading a tray and roll the paper.");
+      break;
+    case 9:
+      print("Printer Ready, start printing.");
+      break;
+    default:
+      print("Default ${startingTime}");
+  }
+}
+
+
+---------------------------
+  
+//code 3.1
+main(List<String> arguments) {
+  isTrue();
+  isFalse();
+}
+bool isTrue(){
+  print("It's true.");
+}
+bool isFalse(){
+  print("It's false.");
+}
+
+
+//code 3.2
+main(List<String> arguments) {
+  isTrue();
+  isFalse();
+}
+isTrue(){
+  print("It's true.");
+}
+isFalse(){
+  print("It's false.");
+}
+
+
+
+//code 3.3
+main(List<String> arguments) {
+  isTrue(1);
+  isFalse(0);
+}
+isTrue(int numTrue){
+  print("It's ${numTrue}. So it's true.");
+}
+isFalse(int numFalse){
+  print("It's ${numFalse}, so it's false.");
+}
+
+
+//code 3.4
+main(List<String> arguments) {
+  myName();
+}
+String myName(){
+  print("My name is John");
+  myAge(12);
+}
+int myAge(int age){
+  print("My age is ${age}");
+}
+
+
+//code 3.5
+main(List<String> arguments) {
+  var newCar = new Car();
+  newCar.carName = "Red Angel";
+  newCar.carModel = 256;
+  if(newCar.isTurnedOn(true)){
+    print("${newCar.carName} starts. It has model number ${newCar.carModel}");
+  } else print("${newCar.carName} stops. It has model number ${newCar.carModel}");
+}
+
+class Car {
+  int carModel = 123;
+  String carName = "Blue Angel";
+
+  bool isTurnedOn(bool){
+    return false;
+  }
+}
+
+
+//code 3.6
+main(List<String> arguments) {
+  var newCar = new Car();
+  newCar.carName = "Red Angel";
+  newCar.carModel = 256;
+  if(newCar.isTurnedOn(true)){
+    print("${newCar.carName} starts. It has model number ${newCar.carModel}");
+  } else print("${newCar.carName} stops. It has model number ${newCar.carModel}");
+}
+class Car {
+  int carModel = 123;
+  String carName = "Blue Angel";
+  bool isTurnedOn(bool){
+    return true;
+  }
+}
+
+
+//code 3.7
+class Bear {
+  int numberOfFish;
+
+  int eatFish(int numberOfFish){
+    return numberOfFish;
+  }
+}
+
+main(List<String> arguments){
+  var fatherBear = new Bear();
+  print("Father bear eats ${fatherBear.eatFish(6)} number of fish.");
+}
+
+
+//code 3.8
+class Bear {
+  int numberOfFish;
+  int hourOfSleep;
+  int weightGain;
+
+  int eatFish(int numberOfFish){
+    return numberOfFish;
+  }
+
+  int sleepAfterEatingFish(int hourOfSleep){
+    return hourOfSleep;
+  }
+
+  int weightGaining(int weightGain){
+    weightGain = numberOfFish * hourOfSleep;
+    return weightGain;
+  }
+}
+
+main(List<String> arguments){
+  var fatherBear = new Bear();
+  fatherBear.numberOfFish = 6;
+  fatherBear.hourOfSleep = 10;
+  fatherBear.weightGain = fatherBear.numberOfFish * fatherBear.hourOfSleep;
+  print("Father bear eats ${fatherBear.eatFish(fatherBear.numberOfFish)} number of fish. And he sleeps for ${fatherBear.sleepAfterEatingFish(fatherBear.hourOfSleep)} hours.");
+  print("Father bear has gained ${fatherBear.weightGaining(fatherBear.weightGain)} pounds of weight.");
+}
+
+
+class Bear {
+  int numberOfFish;
+  int hourOfSleep;
+  int weightGain;
+  //changing the styles of the methods completely
+  int eatFish(int numberOfFish) => numberOfFish;
+  int sleepAfterEatingFish(int hourOfSleep) => hourOfSleep;
+  int weightGaining(int weightGain) => weightGain = numberOfFish * hourOfSleep;
+}
+
+main(List<String> arguments){
+  var fatherBear = Bear(); //omitted the ‘new’ word
+  fatherBear.numberOfFish = 7;
+  fatherBear.hourOfSleep = 20;
+  fatherBear.weightGain = fatherBear.numberOfFish * fatherBear.hourOfSleep;
+  print("Father bear eats ${fatherBear.eatFish(fatherBear.numberOfFish)} fishes. And he sleeps for ${fatherBear.sleepAfterEatingFish(fatherBear.hourOfSleep)} hours.");
+  print("Father bear has gained ${fatherBear.weightGaining(fatherBear.weightGain)} pounds of weight.");
+}
+
+
+//code 3.10
+class Bear {
+  int numberOfFish;
+  int hourOfSleep;
+  int weightGain;
+
+  Bear(this.numberOfFish, this.hourOfSleep);//  Constructor
+
+  int eatFish(int numberOfFish) => numberOfFish;
+  int sleepAfterEatingFish(int hourOfSleep) => hourOfSleep;
+  int weightGaining(int weightGain) => weightGain = numberOfFish * hourOfSleep;
+}
+
+main(List<String> arguments){
+  var fatherBear = Bear(6, 10);
+  fatherBear.weightGain = fatherBear.numberOfFish * fatherBear.hourOfSleep;
+  print("Father bear eats ${fatherBear.eatFish(fatherBear.numberOfFish)} fishes. And he sleeps for ${fatherBear.sleepAfterEatingFish(fatherBear.hourOfSleep)} hours.");
+  print("Father bear has gained ${fatherBear.weightGaining(fatherBear.weightGain)} pounds of weight.");
+}
+Creating constructor is extremely easy. Watch this line:
+Bear(this.numberOfFish, this.hourOfSleep);
+
+
+//code 3.11
+class Bear {
+  int numberOfFish;
+  int hourOfSleep;
+  int weightGain;
+
+  Bear(int numOfFish, int hourOfSleep){// constructor
+    this.numberOfFish = numOfFish;//using this keyword to point out the current class object
+    this.hourOfSleep = hourOfSleep;
+  }
+  //Bear(this.numberOfFish, this.hourOfSleep);
+
+  int eatFish(int numberOfFish) => numberOfFish;
+  int sleepAfterEatingFish(int hourOfSleep) => hourOfSleep;
+  int weightGaining(int weightGain) => weightGain = numberOfFish * hourOfSleep;
+}
+
+main(List<String> arguments){
+  var fatherBear = Bear(6, 10);
+  fatherBear.weightGain = fatherBear.numberOfFish * fatherBear.hourOfSleep;
+  print("Father bear eats ${fatherBear.eatFish(fatherBear.numberOfFish)} fishes. And he sleeps for ${fatherBear.sleepAfterEatingFish(fatherBear.hourOfSleep)} hours.");
+  print("Father bear has gained ${fatherBear.weightGaining(fatherBear.weightGain)} pounds of weight.");
+}
+
+
+
+//code 3.12
+main(List<String> arguments){
+  var fatherBear = Bear(6, 10);
+  fatherBear.weightGain = fatherBear.numberOfFish * fatherBear.hourOfSleep;
+  print("Father bear eats ${fatherBear.eatFish(fatherBear.numberOfFish)} fishes. And he sleeps for ${fatherBear.sleepAfterEatingFish(fatherBear.hourOfSleep)} hours.");
+  print("Father bear has gained ${fatherBear.weightGaining(fatherBear.weightGain)} pounds of weight.");
+  print("The type of the object : ${fatherBear.weightGain.runtimeType}");
+  String weightGained = fatherBear.weightGain.toString();
+  print("The type of the same object has changed to : ${weightGained.runtimeType}");
+}
+
+
+//code 3.13
+class CheckHTTPS {
+  String urlCheck;
+  CheckHTTPS(this.urlCheck);
+  bool checkURL(String urlCheck){
+    if(this.urlCheck.contains("https")){
+      return true;
+    } else return false;
+  }
+}
+
+main(List<String> arguments){
+  var newURL = CheckHTTPS('http://sanjib.site');
+  print("The URL ${newURL.urlCheck} is not secured");
+}
+
+
+//code 3.14
+class MyClass {
+  String myVariable; //property or instance variable, initially null
+  MyClass(this.myVariable); //constructor
+
+  String myMethod(){ //method declaration
+    return "This is my method and this is ${myVariable}"; //returning value
+  }
+}
+
+main(List<String> arguments){
+  var myObject = MyClass("My String"); //creating new instance of class MyClass
+  print("${myObject.myMethod()}"); //printing the value
+}
+
+
+//code 3.15
+main(List<String> arguments){
+  print(showConnection());
+}
+
+//optional positional parameter
+String myConnection(String dbName, String hostname, String username, [String optionalPassword]){
+  if(optionalPassword == null){
+    return "${dbName}, ${hostname}, $username";
+  } else return "${dbName}, ${hostname}, $username, $optionalPassword";
+}
+
+void showConnection(){
+  myConnection("MySQL", "localhost", "root", "*******");
+}
+
+
+//code 3.16
+main(List<String> arguments){
+  var myConnect = myConnection("MySQL", "localhost", "root", "*******");
+  print(myConnect);
+}
+
+//optional positional parameter
+String myConnection(String dbName, String hostname, String username, [String optionalPassword]){
+  if(optionalPassword == null){
+    return "${dbName}, ${hostname}, $username";
+  } else return "${dbName}, ${hostname}, $username, $optionalPassword";
+}
+
+
+//code 3.17
+main(List<String> arguments){
+  var myConnect = myConnection("MySQL", "localhost", "root");
+  print(myConnect);
+}
+
+//optional positional parameter
+String myConnection(String dbName, String hostname, String username, [String optionalPassword]){
+  if(optionalPassword == null){
+    return "${dbName}, ${hostname}, $username";
+  } else return "${dbName}, ${hostname}, $username, $optionalPassword";
+}
+
+
+//code 3.18
+main(List<String> arguments){
+  var myConnect = myConnection("MySQL", "localhost", "root");
+  print(myConnect);
+}
+//optional positional parameter is no more
+String myConnection(String dbName, String hostname, String username, String optionalPassword){
+  if(optionalPassword == null){
+    return "${dbName}, ${hostname}, $username";
+  } else return "${dbName}, ${hostname}, $username, $optionalPassword";
+}
+
+
+
+//code 3.19
+var outsideVariable = "I am an outsider.";
+
+main(List<String> arguments){
+  //we can access the outside variable
+  print(outsideVariable);
+  // we cannot access the insider variable, it gives us error
+  //print(insiderVariable);
+  // it is an insider function
+  String insiderFunction(){
+    // I can access the outside variable, no problem
+    print("This is from the insider function.");
+    print(outsideVariable);
+    String insiderVariable = "I am an insider";
+    print(insiderVariable); // it's okay to access this insider
+  }
+  insiderFunction();
+}
+
+
+//code 3.20
+var outsideVariable = "I am an outsider.";
+main(List<String> arguments){
+  //we can access the outside variable
+  print(outsideVariable);
+  // we cannot access the insider variable, it gives us error
+  print(insiderVariable);
+  // it is an insider function
+  String insiderFunction(){
+    // I can access the outisde variable, no problem
+    print("This is from the insider function.");
+    print(outsideVariable);
+    String insiderVariable = "I am an insider";
+    print(insiderVariable); // it's okay to access this insider
+  }
+  insiderFunction();
+}
+
+
+//code 3.21
+class myClass {
+    String name;
+    String get getName => name;
+    set setName(String aValue) => name = aValue;
+}
+
+main(List<String> arguments){
+  var myObject = myClass();
+  myObject.setName = "Sanjib";
+  print(myObject.getName);
+}
+
+
+//code 3.22
+//default parameters
+String defaultParameters(String name, String address, {int age = 10}){
+  return "$name and $address and age $age";
+}
+
+//optional parameters
+String optionalParameters(String name, String address, [int age] ){
+  return "$name and $address and $age";
+}
+
+void main(){
+  print(defaultParameters("John", "Jericho"));
+  print(optionalParameters("John", "Form Chikago"));
+  // overriding the default age
+  print(defaultParameters("JOhn", "Jericho", age : 20));
+}
+
+
+//code 3.23
+//named parameter
+int findTheVolume(int length, {int height, int breadth}){
+  return length * height * breadth;
+}
+
+void main(){
+  //sequence does not matter
+  var  result1 = findTheVolume(10, height: 20, breadth: 30);
+  var  result2 = findTheVolume(10, breadth: 30, height: 10);
+  print(result1);
+  print(result2);
+}
+
+
+//code 3.24
+class Bear {
+  //reference variable
+  int collarID;
+  //default and parameterized constructor
+  Bear(this.collarID);
+  //first named constructor
+  Bear.firstNamedConstructor(this.collarID);
+  //second named constructor
+  Bear.secondNamedConstructor(this.collarID);
+  void trackingBear() {	
+    String color; // local varia   print("Tracking the bear with collar ID ${collarID}");
+  }
+}
+
+main(List<String> arguments){
+  // bear1 is reference variable
+  // Bear() is object// It should be class no object I suppose
+  var bear1 = Bear(1);
+  bear1.trackingBear();
+  var bear2 = Bear.firstNamedConstructor(2);
+  bear2.trackingBear();
+  var bear3 = Bear.secondNamedConstructor(3);
+  bear3.trackingBear();
+}
+---------------------------
+//code 4.1
+class Animal {
+  String name = "Animal";
+  Animal(){
+    print("I am Animal class constructor.");
+  }
+
+  Animal.namedConstructor(){
+    print("This is parent animal named constructor.");
+  }
+
+  void showName(){
+    print(this.name);
+  }
+
+  void eat(){
+    print("Animals eat everything depending on what type it is.");
+  }
+}
+
+class Cat extends Animal {
+  //overriding parent constructor
+  //although constructors are not inherited
+  Cat() : super(){
+    print("I am child cat class overriding super Animal class.");
+  }
+
+  Cat.namedCatConstructor() : super.namedConstructor(){
+    print("The child cat named constructor overrides the parent animal named constructor.");
+  }
+
+  @override // method overriding
+  void showName(){
+    print("Hi from cat.");
+  }
+
+  @override
+  void eat(){
+    super.eat();
+    print("Cat doesn't eat vegetables..");
+  }
+}
+
+main(List<String> arguments){
+  var cat = Cat();
+  cat.name = "Meaow";
+  cat.showName();
+  cat.eat();
+  var anotherCat = Cat.namedCatConstructor();
+}
+
+
+//code 4.2
+class Animal {
+  String name = "Animal";
+  Animal(){
+    print("I am Animal class constructor.");
+  }
+  Animal.namedConstructor(){
+    print("This is parent animal named constructor.");
+  }
+  void showName(){
+    print(this.name);
+    print("Hi from ${this.name}");
+  }
+  void eat(){
+    print("Animals eat everything depending on what type it is.");
+  }
+}
+
+class Cat extends Animal {
+  //overriding parent constructor
+  //although constructors are not inherited
+  Cat() : super(){
+    print("I am child cat class overriding super Animal class.");
+  }
+  Cat.namedCatConstructor() : super.namedConstructor(){
+    print("The child cat named constructor overrides the parent animal named constructor.");
+  }
+
+  @override
+  void showName(){
+    print("Hi from cat.");
+    print(this.name);
+  }
+
+  @override
+  void eat(){
+    super.eat();
+    print("Cat doesn't eat vegetables..");
+  }
+}
+
+main(List<String> arguments){
+  var animal = Animal();
+  animal.name = "Cow";
+  animal.showName();
+  var cat = Cat();
+  cat.name = "Meaow";
+  cat.showName();
+  cat.eat();
+  var anotherCat = Cat.namedCatConstructor();
+}
+
+
+//code 4.3
+class Animal {
+  String name = "Animal";
+  Animal(){
+    print("I am Animal class constructor.");
+  }
+  Animal.namedConstructor(){
+    print("This is parent animal named constructor.");
+  }
+  void showName(){
+    print(this.name);
+    print("Hi from ${this.name}");
+  }
+  void eat(){
+    print("Animals eat everything depending on what type it is.");
+  }
+}
+
+class Dog extends Animal {
+  //overriding parent constructor
+  //although constructors are not inherited
+  Dog() : super(){
+    print("I am child class dog overriding super Animal class.");
+  }
+  Dog.namedCatConstructor() : super.namedConstructor(){
+    print("The child dog named constructor overrides the parent animal named constructor.");
+  }
+  Dog.anotherNamedConstructor(){
+    print("This is parent Dog named constructor.");
+  }
+  @override
+  void showName(){
+    print("Hi from parent dog.");
+    print(this.name);
+  }
+  @override
+  void eat(){
+    super.eat();
+    print("Dog doesn't eat vegetables..");
+  }
+}
+
+class PuppyDog extends Dog {
+  //overriding parent constructor
+  //although constructors are not inherited
+  PuppyDog() : super(){
+    print("I am child class puppy dog overriding my immediate parent Dog class.");
+  }
+  PuppyDog.namedCatConstructor() : super.anotherNamedConstructor(){
+    print("The child puppy dog named constructor overrides the parent Dog another named constructor.");
+  }
+  @override
+  void showName(){
+    print("Hi from puppy dog.");
+    print(this.name);
+  }
+  @override
+  void eat(){
+    super.eat();
+    print("Puppy Dog eats milk only ...");
+  }
+}
+
+main(List<String> arguments){
+  var animal = Animal();
+  animal.name = "Cow";
+  animal.showName();
+  var dog = Dog();
+  dog.name = "Lucky";
+  dog.showName();
+  dog.eat();
+  var anotherDog = Dog.namedCatConstructor();
+  var puppy = PuppyDog();
+  puppy.name = "I am offspring of Lucky";
+  puppy.showName();
+  puppy.eat();
+  var anotherPuppy = PuppyDog.namedCatConstructor();
+}
+
+
+//code 4.4
+class Animal {
+  String name = "Animal";
+  Animal(){
+    print("I am Animal class constructor.");
+  }
+  Animal.namedConstructor(){
+    print("This is parent animal named constructor.");
+  }
+  void showName(){
+    print(this.name);
+  }
+  void eat(){
+    print("Animals eat everything depending on what type it is.");
+  }
+}
+
+class Dog {
+  void canRun(){
+    print("I can run.");
+  }
+}
+
+class Cat extends Animal with Dog {//reusing another class
+  //overriding parent constructor
+  //although constructors are not inherited
+  Cat() : super(){
+    print("I am child cat class overriding super Animal class.");
+  }
+  Cat.namedCatConstructor() : super.namedConstructor(){
+    print("The child cat named constructor overrides the parent animal named constructor.");
+  }
+  @override
+  void showName(){
+    print("Hi from cat.");
+  }
+  @override
+  void eat(){
+    super.eat();
+    print("Cat doesn't eat vegetables..");
+  }
+}
+
+main(List<String> arguments){
+  var cat = Cat();
+  cat.name = "Meaow";
+  cat.showName();
+  cat.eat();
+  var anotherCat = Cat.namedCatConstructor();
+  anotherCat.canRun();
+}
+
+
+//code 4.5
+class Animal {
+  String name = "Animal";
+  Animal(){
+    print("I am Animal class constructor.");
+  }
+  Animal.namedConstructor(){
+    print("This is parent animal named constructor.");
+  }
+  void showName(){
+    print(this.name);
+    print("Hi from ${this.name}");
+  }
+  void eat(){
+    print("Animals eat everything depending on what type it is.");
+  }
+}
+
+class Human {
+  void eating(){
+    print("Some people eat animals.");
+  }
+}
+
+class Dog extends Animal implements Human {
+  //overriding parent constructor
+  //although constructors are not inherited
+  Dog() : super(){
+    print("I am child class dog overriding super Animal class.");
+  }
+  Dog.namedCatConstructor() : super.namedConstructor(){
+    print("The child dog named constructor overrides the parent animal named constructor.");
+  }
+  Dog.anotherNamedConstructor(){
+    print("This is parent Dog named constructor.");
+  }
+  @override
+  void showName(){
+    print("Hi from parent dog.");
+    print(this.name);
+  }
+  @override
+  void eat(){
+    super.eat();
+    print("Dog doesn't eat vegetables..");
+  }
+
+  void eating(){
+    print("Some animals eat other animals.");
+  }
+}
+
+class PuppyDog extends Dog with Human {
+  //overriding parent constructor
+  //although constructors are not inherited
+  PuppyDog() : super(){
+    print("I am child class puppy dog overriding my immediate parent Dog class.");
+  }
+
+  PuppyDog.namedCatConstructor() : super.anotherNamedConstructor(){
+    print("The child puppy dog named constructor overrides the parent Dog another named constructor.");
+  }
+  @override
+  void showName(){
+    print("Hi from puppy dog.");
+    print(this.name);
+  }
+  @override
+  void eat(){
+    super.eat();
+    print("Puppy Dog eats milk only ...");
+  }
+  void eating(){
+    print("Some puppy dogs also eat meat of other animals.");
+  }
+}
+
+main(List<String> arguments){
+  var animal = Animal();
+  animal.name = "Cow";
+  animal.showName();
+  var dog = Dog();
+  dog.name = "Lucky";
+  dog.showName();
+  dog.eat();
+  var anotherDog = Dog.namedCatConstructor();
+  anotherDog.eating();
+  var puppy = PuppyDog();
+  puppy.name = "I am offspring of Lucky";
+  puppy.showName();
+  puppy.eat();
+  var anotherPuppy = PuppyDog.namedCatConstructor();
+  anotherPuppy.eating();
+}
+
+
+//code 4.6
+class Dog extends Animal implements Human {
+
+class PuppyDog extends Dog with Human {
+
+
+//code 4.7
+class Human {
+  void eating(){
+    print("Some people eat animals.");
+  }
+}
+
+
+//code 4.8
+void eating(){
+    print("Some animals eat other animals.");
+  }
+
+
+
+//code 4.9
+void eating(){
+    print("Some puppy dogs also eat meat of other animals.");
+  }
+
+------------------------
+//code 5.1
+//we cannot instantiate any abstract class
+abstract class volume{
+  //we can declare instance variable
+  int age;
+  void increase();
+  void decrease();
+  // a normal function
+  void anyNormalFunction(int age){
+    print("This is a normal function to know the $age.");
+  }
+}
+
+class soundSystem extends volume{
+  void increase(){
+    print("Sound is up.");
+  }
+  void decrease(){
+    print("Sound is down.");
+  }
+  //it is optional to override the normal function
+  void anyNormalFunction(int age){
+    print("This is a normal function to know how old the sound system is: $age.");
+  }
+}
+
+main(List<String> arguments){
+  var newSystem = soundSystem();
+  newSystem.increase();
+  newSystem.decrease();
+  newSystem.anyNormalFunction(10);
+}
+
+
+
+//code 5.2
+abstract class Mammal {
+  void run();
+  void walk();
+  void sound(){
+    print("Mammals make sound");
+  }
+}
+
+class Human implements Mammal {
+
+  void run(){
+    print("I am running.");
+  }
+  void walk(){
+    print("I am walking");
+  }
+  void sound(){
+  }
+}
+
+main(List<String> arguments){
+  var John = Human();
+  print("John says: ");
+  John.run();
+  print("John says: ");
+  John.walk();
+  print("John makes no sound.");
+}
+
+
+
+//code 5.3
+abstract class Mammal {
+  void run();
+  void walk();
+  void sound(){
+    print("Mammals make sound");
+  }
+}
+
+class Human implements Mammal {
+
+  void run(){
+    print("I am running.");
+  }
+  void walk(){
+    print("I am walking");
+  }
+  void sound(){
+    print("Humans make sound");
+  }
+}
+
+main(List<String> arguments){
+  var John = Human();
+  print("John says: ");
+  John.run();
+  print("John says: ");
+  John.walk();
+  print("John makes sound.");
+  John.sound();
+}
+
+
+//code 5.4
+// interface in Dart is a class, but we don't extend, 
+// we implement it 
+class Vehicle{
+  void steerTheVehicle() {
+    print("The vehicle is moving.");
+  }
+}
+
+class Engine{
+  //in the interface, but only visible when used publicly
+  final _name; // final means single assignment and it must have an initializer as I use here
+  //not in the interface, since it is a constructor
+  Engine(this._name);
+  String lessOilConsumption(){
+    return "It consumes less oil.";
+  }
+}
+
+class Car implements Vehicle, Engine{
+  get _name => "";
+  void carName(String name) => print("$name");
+
+  void steerTheVehicle() {
+    print("The car is moving.");
+  }
+
+  String lessOilConsumption(){
+    print("This model of car consumes less oil.");
+  }
+
+  void ridingExperience(Engine engine) => print("This car gives good ride, because the engine is ${engine._name}");
+}
+
+main(List<String> arguments){
+  var car = Car();
+  car.carName("Opel");
+  car.steerTheVehicle();
+  car.lessOilConsumption();
+  car.ridingExperience(Engine("Suzuki"));
+}
+
+
+//code 5.5
+class OrderDetails {
+  void UpdateCustomers(){
+  }
+  void TakeOrder(){
+  }
+}
+
+class ItemDetails implements OrderDetails{
+  void UpdateCustomers(){
+    //implementing interface members
+    print("Updating customers.");
+  }
+  void TakeOrder(){
+    //implementing interface members
+    print("Taking orders from customers.");
+  }
+}
+
+main(List<String> arguments){
+  var book = ItemDetails();
+  book.TakeOrder();
+  book.UpdateCustomers();
+}
+
+
+//code 5.6
+class OrderDetails {
+  void UpdateCustomers(){
+  }
+  void TakeOrder(){
+  }
+}
+
+class ItemDetails implements OrderDetails{
+  void UpdateCustomers(){
+    //implementing interface members
+    print("Updating customers.");
+  }
+  /*
+  void TakeOrder(){
+    //implementing interface members
+    print("Taking orders from customers.");
+  }
+  */
+}
+
+main(List<String> arguments){
+  var book = ItemDetails();
+  //book.TakeOrder();
+  book.UpdateCustomers();
+}
+
+
+//code 5.7
+class OrderDetails {
+  //int age;
+  /*
+  void anyNormalFunction(int age){
+    print("This is a normal function to know the $age.");
+  }
+  */
+  void UpdateCustomers(){
+  }
+  void TakeOrder(){
+  }
+}
+
+abstract class CustomerDetails {
+  void Customers(){
+  }
+}
+
+class ItemDetails extends CustomerDetails implements OrderDetails {
+
+  void anyNormalFunction(int age){
+    print("This is a normal function to know the age: $age.");
+  }
+  void UpdateCustomers(){
+    //implementing interface members
+    print("Updating customers.");
+  }
+
+  void TakeOrder(){
+  }
+
+  void Customers(){
+  }
+
+}
+
+main(List<String> arguments){
+  var book = ItemDetails();
+  //book.TakeOrder();
+  book.UpdateCustomers();
+  book.anyNormalFunction(12);
+}
+
+
+//code 5.8
+class OrderDetails {
+  int age;
+  void anyNormalFunction(int age){
+    print("This is a normal function to know the $age.");
+  }
+
+  void UpdateCustomers(){
+  }
+  void TakeOrder(){
+  }
+}
+
+abstract class CustomerDetails {
+  void Customers(){
+  }
+}
+
+class ItemDetails extends CustomerDetails implements OrderDetails {
+//trying to implement interface normal functions
+  void anyNormalFunction(int age){
+    print("This is a normal function to know the age: $age.");
+  }
+  void UpdateCustomers(){
+    //implementing interface members
+    print("Updating customers.");
+  }
+
+  void TakeOrder(){
+  }
+
+  void Customers(){
+  }
+
+}
+
+main(List<String> arguments){
+  var book = ItemDetails();
+  //book.TakeOrder();
+  book.UpdateCustomers();
+  book.anyNormalFunction(12);
+}
+
+
+//code 5.9
+// static variables and methods consume less memory
+// they are lazily initialized
+class Circle{
+  static const pi = 3.14;
+
+  static Function drawACircle(){
+    //from static method you cannot call a normal function
+    print(pi);
+  }
+
+  Function aNonStaticFunction(){
+    //from a normal function you can call a static meethod
+    Circle.drawACircle();
+    print("This is normal function.");
+  }
+}
+
+main(List<String> arguments){
+  var circle = Circle();
+  circle.aNonStaticFunction();
+  Circle.drawACircle();
+}
+---------------------------------
+//code 6.1
+class Cart{
+
+  Function addingTwoItems = (int item1, int item2){
+
+    var sum = item1 + item2;
+    return sum;
+
+  };
+
+}
+
+main(List<String> arguments){
+
+  var cart = Cart();
+  print("Your total price is:");
+  print(cart.addingTwoItems(120, 458));  
+}
+
+
+//code 6.2
+class Cart{
+
+  Function ourReturnPolicy = (String messageToCustomer) { 
+	return messageToCustomer; 
+};
+
+  var returnUpdateCustomer = (String updateCustomer) => updateCustomer;
+
+}
+
+main(List<String> arguments){
+  var cart = Cart();
+  print(cart.ourReturnPolicy("Please read our return policy"));
+  print(cart.returnUpdateCustomer("Your item has been shipped."));  
+}
+
+
+//code 6.3
+class LambdaCode{
+  // here addingTwonumbers is a nameless function
+  Function addingTwonumbers = (int x, int y){
+    var sum = x + y;
+    return sum;
+  };
+}
+
+main(List<String> arguments){
+  var lambdaShow = LambdaCode();
+  print(lambdaShow.addingTwonumbers(12, 47));
+}
+
+
+//code 6.4
+class LambdaCode{
+  // here addingTwonumbers is a nameless function
+  Function addingTwonumbers = (int x, int y){
+    var sum = x + y;
+    return sum;
+  };
+  Function divideByFour = (int num) => num ~/ 4;//dividing by 4
+}
+
+main(List<String> arguments){
+  var lambdaShow = LambdaCode();
+  print(lambdaShow.addingTwonumbers(12, 47));
+  print(lambdaShow.divideByFour(56));
+}
+
+
+//code 6.5
+//returning a function
+Function DividingByFour(){
+  Function LetUsDivide = (int x) => x ~/ 4;
+  return LetUsDivide;
+}
+
+main(List<String> arguments){
+  var result = DividingByFour();
+  print(result(56));
+}
+
+
+//code 6.6
+//anonymous_adding_cart.dart
+class Cart{
+
+  Function addingTwoItems = (int item1, int item2){
+
+    var sum = item1 + item2;
+    return sum;
+
+  };
+
+  Function ourReturnPolicy = (String messageToCustomer) { return messageToCustomer; };
+
+  var returnUpdateCustomer = (String updateCustomer) => updateCustomer;
+
+}
+
+import 'anonymous_adding_cart.dart'; // importing a class stored in a Dart file
+
+main(List<String> arguments){
+
+  List tasks = new List();
+
+  tasks.add((String item) => item);  // this is a List method
+  tasks.add( (item) {
+    return item;
+  } );
+  
+  print(tasks);
+
+  tasks.add("John");
+  tasks.add("Smith");
+
+  tasks.forEach((item){//  We iterate through the lists
+    print("${tasks.indexOf(item)} : $item");
+  });
+
+  var cart = Cart();
+  print("Your total price is:");
+  print(cart.addingTwoItems(120, 458));
+  print(cart.ourReturnPolicy("Please read our return policy"));
+  print(cart.returnUpdateCustomer("Your item has been shipped."));
+
+  var testStringAnonymous = (String stringAnonymous) => stringAnonymous;
+
+  print(testStringAnonymous("I am anonymous"));
+
+  var list = ["John Smith", "The Last Man Standing", "Action Movie"];
+
+  list.forEach((item){
+    print("${list.indexOf(item)} : $item");
+  });
+
+}
+
+
+//code 6.7
+//a closure can modify the parent scope
+String message = "Any Parent String";
+Function overridingParentScope = (){
+  String message = "Overriding the parent scope";
+  print(message);
+};
+
+main(List<String> arguments){
+  print(message);
+  overridingParentScope();
+}
+
+
+
+//code 6.8
+//declaring an anonymous function without any parameter
+Function show = (){
+  String pathToImage = "This is an old path.";
+  Function gettingImage(){
+    String path = "This is a new path to image.";
+    print(path);
+  }
+  return gettingImage;
+};
+
+main(List<String> arguments){
+  var showing = show();
+  showing();
+}
+
+
+//code 6.9
+//Lambda is an anonymous function
+class AboutLambdas{
+  //first way of expressing Lambda or anonymous function
+  Function addingNumbers = (int a, int b){
+    var sum = a + b;
+     
+    return sum;
+  };
+  Function multiplyWithEight = (int num){
+    return num * 8;
+  };
+
+  //second way of expressing Lambda by Fat Arrow
+  Function showName = (String name) => name;
+
+  //higher order functions pass function as parameter
+  int higherOrderFunction(Function myFunction){
+    int a = 10;
+    int b = 20;
+    print(myFunction(a, b));
+  }
+
+  //returning a function
+  Function returningAFunction(){
+    Function showAge = (int age) => age;
+    return showAge;
+  }
+
+  //a closure can modify the parent scope
+  String anyString = "Any Parent String";
+  Function overridingParentScope = (){
+    String message = "Overriding the parent scope";
+    print(message);
+  };
+
+  Function show = (){
+    String pathToImage = "This is an old path."; // the anonymous function will return this originally
+    Function gettingImage(){ // anonymous function returns a function
+      String path = "This is a new path to image.";
+      print(path);
+    }
+    return gettingImage;
+  };
+}
+
+main(List<String> arguments){
+  var add = AboutLambdas();
+  var addition = add.addingNumbers(5, 10);
+  print(addition);
+  var mul = AboutLambdas();
+  var result = mul.multiplyWithEight(4);
+  print(result);
+  var name = AboutLambdas();
+  var myName = name.showName("Sanjib");
+  print(myName);
+  var higher = AboutLambdas();
+  var higherOrder = higher.higherOrderFunction(add.addingNumbers);
+  higherOrder;
+  var showAge = AboutLambdas();
+  var showingAge = showAge.returningAFunction();
+  print(showingAge(25));
+  var sayMessage = AboutLambdas();
+  sayMessage.overridingParentScope();
+  var image = AboutLambdas();
+  var imagePath = image.show();
+  imagePath();
+}
+
+------------------------
+//code 7.1
+int listFunction(){
+  List<int> nameOfTest = List(3);
+  nameOfTest[0] = 1;
+  nameOfTest[1] = 2;
+  nameOfTest[2] = 3;
+
+  //there are three methods to capture the list
+  //1. method
+  for(int element in nameOfTest){
+    print(element);
+  }
+  print("-----------");
+
+  //2. method
+  nameOfTest.forEach((v) => print('${v}'));
+  print("-----------");
+
+  //3. method
+  for(int i = 0; i < nameOfTest.length; i++){
+    print(nameOfTest[i]);
+  }
+}
+
+main(List<String> arguments){
+  listFunction();
+}
+
+
+//code 7.2
+Function growableList(){
+  //1. method
+  List<String> names = List();
+  names.add("Mana");
+  names.add("Babu");
+  names.add("Gopal");
+  names.add("Pota");
+
+  //there are two methods to capture the list
+  print("-----------");
+
+  //1. method
+  names.forEach((v) => print('${v}'));
+  print("-----------");
+
+  //2. method
+  for(int i = 0; i < names.length; i++){
+    print(names[i]);
+  }
+}
+
+main(List<String> arguments){
+  growableList();
+}
+
+
+//code 7.3
+main(){
+  var number1 = 1;
+  var number2 = 1;
+  while(number2 < 50){
+    print(number2);
+    number2 += number1;
+    number1 = number2 - number1;
+  }
+  print("Separator line: =============");
+  var fibonacciNumbers = [1, 2, 3, 5, 8, 13, 21, 34];
+  print(fibonacciNumbers.take(3).toList());
+  print("Separator line: =============");
+  print(fibonacciNumbers.skip(5).toList());
+  print("Separator line: =============");
+  print(fibonacciNumbers.skip(2).contains(5));
+  print("Separator line: =============");
+  print(fibonacciNumbers.take(3).skip(2).take(1).toList());
+  print("Separator line: =============");
+  var clonedFibonacciNumbers = List.from(fibonacciNumbers);
+  print("Cloned list: $clonedFibonacciNumbers");
+
+}
+
+
+//code 7.4
+main(){
+  var names = ["John", "Robert", "Smith", "Peter"];
+  names.forEach((name) => print(name)); 
+}
+
+
+//code 7.5
+main(){
+  var names = ["John", "Robert", "Smith", "Peter"];
+  names.forEach((name) => print(name));
+  
+  var mappedNames = names.map((name) => "Absconding $name").toList();
+  print(mappedNames);
+}
+
+
+//code 7.6
+void setFunction(){
+  //set is an unordered collections of unique items
+  //cannot get elements by INDEX since the items are unordered
+  //1. method of creating Set
+  Set<String> countries = Set.from(['India', 'England', 'US']);
+  Set<int> numbers = Set.from([1, 45, 58]);
+  Set<int> moreNumbers = Set();
+  moreNumbers.add(178);
+  moreNumbers.add(568);
+  moreNumbers.add(569);
+
+  //1. method
+  for(int element in numbers){
+    print(element);
+  }
+  print("-----------");
+
+  //2. method
+  countries.forEach((v) => print('${v}'));
+  print("-----------");
+  for(int element in moreNumbers){
+    if(moreNumbers.lookup(178) == 178){
+      print(moreNumbers);
+      break;
+    }
+  }
+
+  //set
+  var fruitCollection = {'Mango', 'Apple', 'Jack fruit'};
+  print(fruitCollection.lookup('Something Else'));
+  //it gives null
+  //lists
+  List fruitCollections = ['Mango', 'Apple', 'Jack fruit'];
+  var myIntegers = [1, 2, 3, 'non-integer object'];
+  print(myIntegers[3]);
+  print(fruitCollections[0]);
+}
+
+main(List<String> arguments){
+  setFunction();
+}
+
+
+//code 7.7
+void mapFunction(){
+  //unordered collection of key=>value pair
+  Map<String, String> countries = Map();
+  countries['India'] = "Asia";
+  countries["Germany"] = "Europe";
+  countries["France"] = "Europe";
+  countries["Brazil"] = "South America";
+
+  //1. method we can obtain key or value
+  for(var key in countries.keys){
+    print("Country's name: $key");
+  }
+  print("-----------");
+  for(String value in countries.values){
+    print("Continent's name: $value");
+  }
+
+  //2. method
+  countries.forEach((key, value) => print("Country: $key and Continent: $value"));
+  //we can update any map very easily
+  if(countries.containsKey("Germany")){
+    countries.update("Germany", (value) => "European Union");
+    print("Updated country Germany.");
+    countries.forEach((key, value) => print("Country: $key and Continent: $value"));
+  }
+
+  //we can remove any country
+  countries.remove("Brazil");
+  countries.forEach((key, value) => print("Country: $key and Continent: $value"));
+  print("Barzil has been removed successfully.");
+  print("-----------");
+
+  //3. method of creating a map
+  Map<String, int> telephoneNumbersOfCustomers = {
+    "John" : 1234,
+    "Mac" : 7534,
+    "Molly" : 8934,
+    "Plywod" : 1275,
+    "Hagudu" : 2534
+  };
+
+  telephoneNumbersOfCustomers.forEach((key, value) => print("Customer: $key and Contact Number: $value"));
+}
+
+main(List<String> arguments){
+  mapFunction();
+}
+
+
+//code 7.8
+main(){
+  var name;
+  var age;
+  List<Map<String, dynamic>> users = [
+    { name: "Peter", age: 18 },
+    { name: "Mira", age: 20 },
+    { name: "Jason", age: 22 },
+  ];
+  var is18AndOver = users.every((user) => user[age] >= 18);
+  print(is18AndOver);
+
+}
+
+
+
+//code 7.9
+main(){
+  var name;
+  var age;
+  List<Map<String, dynamic>> users = [
+    { name: "Peter", age: 18 },
+    { name: "Mira", age: 20 },
+    { name: "Jason", age: 22 },
+  ];
+  var isEighteenAndOver = users.every((user) => user[age] >= 18);
+  print(isEighteenAndOver);
+
+  var hasNamesWithLetterA = users.every((user) => user.toString().startsWith("A"));
+  print(hasNamesWithLetterA);
+
+}
+
+
+//code 7.10
+main(){
+  var name;
+  var age;
+  List<Map<String, dynamic>> users = [
+    { name: "Peter", age: 18 },
+    { name: "Mira", age: 20 },
+    { name: "Jason", age: 22 },
+    { name: "Morgan", age: 32 },
+    { name: "Mary", age: 50 },
+    { name: "Will", age: 86 },
+    { name: "Bruce", age: 96 },
+  ];
+  var isEighteenAndOver = users.every((user) => user[age] >= 18);
+  print(isEighteenAndOver);
+
+  var hasNamesWithLetterA = users.every((user) => user.toString().startsWith("A"));
+  print(hasNamesWithLetterA);
+
+  var overTwentyOne = users.where((user) => user[age] > 21);
+  print(overTwentyOne.length);
+
+}
+
+
+//code 7.11
+main(){
+  var name;
+  var age;
+  List<Map<String, dynamic>> users = [
+    { name: "Peter", age: 18 },
+    { name: "Mira", age: 20 },
+    { name: "Jason", age: 22 },
+    { name: "Morgan", age: 32 },
+    { name: "Mary", age: 50 },
+    { name: "Will", age: 86 },
+    { name: "Bruce", age: 96 },
+  ];
+  var isEighteenAndOver = users.every((user) => user[age] >= 18);
+  print(isEighteenAndOver);
+
+  var hasNamesWithLetterA = users.every((user) => user.toString().startsWith("A"));
+  print(hasNamesWithLetterA);
+
+  var overTwentyOne = users.where((user) => user[age] > 21);
+  print(overTwentyOne.length);
+
+  var underEighteen = users.singleWhere((user) => user[age] < 18, orElse: () => null);
+  print(underEighteen);
+
+}
+
+
+//code 7.12
+import 'dart:collection'; // we are about to import some extra methods from collection library
+main(List<String> arguments){
+  Queue myQueue = new Queue();
+  print("Default implementation ${myQueue.runtimeType}");
+
+  myQueue.add("Sanjib");
+  myQueue.add(54);
+  myQueue.add("Howrah");
+  myQueue.add("sanjib12sinha@gmail.com");
+  for(var allTheQueues in myQueue){
+    print(allTheQueues);
+  }
+  print("----------");
+
+  print("We are removing the first element ${myQueue.elementAt(0)}.");
+  myQueue.removeFirst();
+  for(var allTheQueues in myQueue){
+    print(allTheQueues);
+  }
+  print("----------");
+
+  print("We are removing the last element ${myQueue.elementAt(2)}.");
+  myQueue.removeLast();
+  for(var allTheQueues in myQueue){
+    print(allTheQueues);
+  }
+}
+-----------------------------
+class CallableClassWithoutArgument {
+  String outPut = "Callable class";
+  void call() {
+    print(outPut);
+  }
+}
+
+typedef void AnotherFunction(String anotherOutput);
+
+class CallableClassWithArgument {
+  call(String name) => "$name";
+}
+
+main(){
+  var withoutArgument = CallableClassWithoutArgument();
+  var withArgument = CallableClassWithArgument();
+  withoutArgument(); // it is equivalent to withoutArgument.call()
+  AnotherFunction anotherFunc = withArgument; //OK
+  AnotherFunction againAnotherFunction = withArgument.call; //OK
+  print(withArgument("John Smith")); //OK.
+  // withArgument(); //it'll give error
+  print(withArgument.call("Calling John Smith"));
+
+}
+
+
+//code 8.2
+//when dart class is callable like a function, use call() function
+class Person{
+  String name;
+  String call(String message, [name]){
+    return "This message: '$message', has been passed to the person $name.";
+  }
+}
+main(List<String> arguments){
+  var John = Person();
+  John.name = "John Smith";
+  String name = John.name;
+  String msgAndName = John("Hi John how are you?", name);
+  print(msgAndName);
+}
+
+
+//code 8.3
+main(List<String> arguments){
+  try{
+    int result = 10 ~/ 0;
+    print("The result is $result");
+  } on IntegerDivisionByZeroException{
+    print("We cannot divide by zero");
+  }
+  try{
+    int result = 10 ~/ 0;
+    print("The result is $result");
+  } catch(e){
+    print(e);
+  }
+  try{
+    int result = 10 ~/ 0;
+    print("The result is $result");
+  } catch(e){
+    print("The exception is : $e");
+  } finally{
+    print("This is finally and it always is executed.");
+  }
+}
+
+
+//code 8.4
+void main() {
+
+  // ON Clause is used when the exception is known
+  try {
+    var res = 4 ~/ 0;
+    print("The result: $res");
+  } on IntegerDivisionByZeroException {
+    print("You cannot divide by zero, the value is undefined");
+  }
+
+  // CATCH Clause is used when exception is unknown
+  try {
+    var res = 3 ~/ 0;
+    print("The result is $res");
+  } catch (e) {
+    print("The exception thrown is $e");
+  }
+
+  // STACK TRACE is used to know the steps of the events
+  // these events took place before the actual Exception was thrown
+  try {
+    int res = 10 ~/ 0;
+    print("The result is $res");
+  } catch (e, s) {
+    print("The exception: $e");
+    print("Stack trace is \n $s");
+  }
+
+  // FINALLY Clause is always Executed
+  // whether exception is thrown or not
+  try {
+    int res = 9 ~/ 0;
+    print("The result: $res");
+  } catch (e) {
+    print("The exception: $e");
+  } finally {
+    print("The finally clause is always executed.");
+  }
+
+  // we can make our Custom Exception by creating a class
+  try {
+    inputValue(-14);
+  } catch (e) {
+    print(e.customException());
+  } finally {
+    print("The finally clause is always executed");
+  }
+}
+
+class InputException implements Exception {
+  String customException() {
+    return "The input of negative number is not valid.";
+  }
+}
+
+void inputValue(int inputNumber) {
+  if (inputNumber < 0) {
+    var inputException = InputException();
+    print(inputException.customException());
+  }
+}
+
+
+//code 8.5
+import 'dart:async';
+
+// our all operations will use the main UI thread
+//since dart and flutter are single threaded we need to use Future, Async amd Await APIs
+
+void main(){
+  // the main UI thread starts after that the heavy operations will take place
+  print("The main UI thread is starting on here.");
+  print("Now it will take 10 seconds to display news headlines.");
+  displayNews();
+  print("The main UI thread ends.");
+  // this program remains incomplete, we don't get the result
+  // it is because the main UI thread is overlapping before 10 seconds
+  // therefore we need await and async APIs to block main UI thread for 10 seconds
+
+}
+
+// this is where our heavy operations are taking place
+Future<String> checkingNewsApp() {
+  // since we are returning a string value
+  // by delaying the main UI thread for 10 seconds
+  Future<String> delayingTenSeconds =  Future.delayed(Duration(seconds: 10), (){
+    return "The latest headlines are displayed here after 10 seconds.";
+  });
+  // after 10 seconds the news headlines will be displayed
+  return delayingTenSeconds;
+}
+
+void displayNews() {
+  // here we will primarily display the news headline
+  Future<String> displayingNewsHeadlines = checkingNewsApp();
+  // inside then we need an anonymous function like lambda or anonymous function
+  displayingNewsHeadlines.then((displayString){
+    // it will give the future object
+    print("Displaying news headlines here: $displayingNewsHeadlines");
+  });
+
+}
+
+
+//code 8.6
+import 'dart:async';
+
+// our all operations will use the main UI thread
+//since dart and flutter are single threaded we need to use Future, Async amd Await APIs
+
+void main(){
+  // the main UI thread starts after that the heavy operations will take place
+  print("The main UI thread is starting on here.");
+  print("Now it will take 10 seconds to display news headlines.");
+  displayNews();
+  print("The main UI thread ends.");
+  // this program remains incomplete, we don't get the result
+  // it is because the main UI thread is overlapping before 10 seconds
+  // therefore we need await and async APIs to block main UI thread for 10 seconds
+//we’re using Future
+
+}
+
+// this is where our heavy operations are taking place
+Future<String> checkingNewsApp() {
+  // since we are returning a string value
+  // by delaying the main UI thread for 10 seconds
+  Future<String> delayingTenSeconds =  Future.delayed(Duration(seconds: 10), (){
+    return "The latest headlines are displayed here after 10 seconds.";
+  });
+  // after 10 seconds the news headlines will be displayed
+  return delayingTenSeconds;
+}
+
+void displayNews() {
+  // here we will primarily display the news headline
+  Future<String> displayingNewsHeadlines = checkingNewsApp();
+  // inside then we need an anonymous function like lambda or anonymous function
+  displayingNewsHeadlines.then((displayString){    
+    print("Displaying news headlines here: $displayString");
+  });
+
+}
+
+
+//code 8.7
+import 'dart:async';
+
+void main(){
+  Future checkVersion() async {
+    var version = await checkVersion();
+    // Do something with version
+    try {
+      return version;
+    } catch (e) {
+      // React to inability to look up the version
+      return e;
+    }
+  }
+  print(checkVersion());
+}
+
+
+//code 8.8
+import 'dart:async';
+void main(){
+
+  print("The main UI thread is starting on here.");
+  print("Now it will take 3 seconds to display the version of Dart.");
+  checkVersion();
+  print("The main UI thread ends.");
+}
+
+Future<String> checkingVersion() {
+  // since we are returning a string value
+  // by delaying the main UI thread for 3 seconds
+  Future<String> delayingTenSeconds =  Future.delayed(Duration(seconds: 3), (){
+    return "The version 2.1 is displayed here after 3 seconds.";
+  });
+  // after 3 seconds the version will be displayed
+  return delayingTenSeconds;
+}
+
+void checkVersion() async {
+  String version = await checkingVersion();
+  // Do something with version
+  try {
+    print("Displaying version here: $version");
+  } catch (e) {
+    // React to inability to look up the version
+    return e;
+  }
+}
+
+
+//code 8.9
+import 'dart:async';
+
+// our all operations will use the main UI thread
+//since dart and flutter are single threaded we need to use Future, Async amd Await APIs
+//however, we have not used it here and got the future object instead of headlines
+
+void main(){
+  // the main UI thread starts after that the heavy operations will take place
+  print("The main UI thread is starting on here.");
+  print("Now it will take 10 seconds to display news headlines.");
+  displayNews();
+  print("The main UI thread ends.");
+  // this program remains incomplete, we don't get the result
+  // it is because the main UI thread is overlapping before 10 seconds
+  // therefore we need await and async APIs to block main UI thread for 10 seconds
+
+}
+
+// this is where our heavy operations are taking place
+Future<String> checkingNewsApp(){
+  // since we are returning a string value
+  // by delaying the main UI thread for 10 seconds
+  Future<String> delayingTenSeconds =  Future.delayed(Duration(seconds: 10), (){
+    return "The latest headlines are displayed here after 10 seconds.";
+  });
+  // after 10 seconds the news headlines will be displayed
+  return delayingTenSeconds;
+}
+
+void displayNews(){
+  // here we will primarily display the news headline
+  Future<String> displayingNewsHeadlines = checkingNewsApp();
+  print("Displaying news headlines here: $displayingNewsHeadlines");
+}
+
+
+//code 8.10
+import 'dart:async';
+
+// our all operations will use the main UI thread
+//since dart and flutter are single threaded we need to use Future, Async amd Await APIs
+
+void main(){
+  // the main UI thread starts after that the heavy operations will take place
+  print("The main UI thread is starting on here.");
+  print("Now it will take 10 seconds to display news headlines.");
+  displayNews();
+  print("The main UI thread ends.");
+  // this program remains incomplete, we don't get the result
+  // it is because the main UI thread is overlapping before 10 seconds
+  // therefore we need await and async APIs to block main UI thread for 10 seconds
+
+}
+
+// this is where our heavy operations are taking place
+Future<String> checkingNewsApp() {
+  // since we are returning a string value
+  // by delaying the main UI thread for 10 seconds
+  Future<String> delayingTenSeconds =  Future.delayed(Duration(seconds: 10), (){
+    return "The latest headlines are displayed here after 10 seconds.";
+  });
+  // after 10 seconds the news headlines will be displayed
+  return delayingTenSeconds;
+}
+
+void displayNews() async {
+  // here we will primarily display the news headline
+  String displayingNewsHeadlines = await checkingNewsApp();
+  print("Displaying news headlines here: $displayingNewsHeadlines");
+}
+
+
+//code 8.11
+import 'dart:async';
+
+void main(){
+  Future<int>.delayed(
+      Duration(seconds: 6),
+      () { return 200; },
+  ).then((value) { print(value); });
+  print('Waiting for a value for 6 seconds...');
+}
+
+
+
+//code 8.12
+import 'dart:async';
+
+void main(){
+  Future<int>.delayed(
+      Duration(seconds: 6),
+      () => throw 'We are throwing some error here.',
+  ).then((value) {
+    print(value);
+  });
+  print('Waiting for a value');
+}
+
+
+//code 8.13
+import 'dart:async';
+
+void main(){
+  Future<int>.delayed(
+      Duration(seconds: 6),
+      () { return 100; },
+  ).then((value) {
+    print(value);
+  }).catchError(
+      (err) {
+        print('Caught $err');
+      },
+    test: (err) => err.runtimeType == String,
+  ).whenComplete(() { print("Process completed."); });
+  print('The main UI thread is waiting');
+}
+
+-----------------------------------------
+//code 9.1
+//lib/ RelationalOperators.dart
+class TrueOrFalse{
+  int firstNum = 40;
+  int secondNum = 40;
+  int thirdNum = 74;
+  int fourthNum = 56;
+  void BetweenTrueOrFalse(){
+    if (firstNum == secondNum || thirdNum == fourthNum){
+      print("If choice between 'true' or 'false', in this case the 'TRUE' gets the precedence. $firstNum is equal to $secondNum");
+    } else print("Nothing happens.");
+  }
+  void BetweenTrueAndFalse(){
+    if (firstNum == secondNum && thirdNum == fourthNum){
+      print("It will go to else clause");
+      } else print("If choice between 'true' and 'false', in this case the 'FALSE' gets the precedence. $thirdNum is not equal to $fourthNum");
+  }
+}
+Next, we create a file 'PowProject.dart' inside the 'lib' folder. 
+//code 9.2
+//lib/PowProject.dart
+class PowProject{
+  void MultiplyByAGivenNumber(int fixedNumber, int givenNumber){
+    int result = fixedNumber * givenNumber;
+    print(result);
+  }
+  void pow(int x, int y){
+    int addition = x + y;
+    print(addition);
+  }
+}
+
+
+//code 9.2
+//lib/PowProject.dart
+class PowProject{
+  void MultiplyByAGivenNumber(int fixedNumber, int givenNumber){
+    int result = fixedNumber * givenNumber;
+    print(result);
+  }
+  void pow(int x, int y){
+    int addition = x + y;
+    print(addition);
+  }
+}
+
+
+//code 9.3
+import 'dart:math' as math;
+//now we can use the ‘math’ as keyword
+import 'package:IdeaProjects/PowProject.dart';
+import 'package:IdeaProjects/RelationalOperators.dart' as Relation;
+main(List<String> arguments){
+  print("Printing 2 to the power 5 using Dart's built-in 'dart:math' library.");
+  var int = math.pow(2, 5);
+  print(int);
+  print("Now we are going to use another 'pow()' function from our own library.");
+  var anotherPowObject = PowProject();
+  anotherPowObject.MultiplyByAGivenNumber(4, 3);
+  anotherPowObject.pow(2, 12);
+  print("Now we are going to use another library to test the relational operators.");
+  var trueOrFalse = Relation.TrueOrFalse();
+  trueOrFalse.BetweenTrueOrFalse();
+  trueOrFalse.BetweenTrueAndFalse();
+}
+
+
+//code 9.4
+
+import 'dart:io';
+import 'dart:async';
+
+Future main() async {
+  var myServer = await HttpServer.bind(
+    '127.0.0.1',
+    8080,
+  );
+  print("The server is alive on the above mentioned port and it's listening "
+      "on ${myServer.port}/");
+
+  myServer.listen((HttpRequest myRequest){
+    myRequest.response
+      ..write("Bonjour mademoiselle, comment appelez vous?")
+      ..close();
+  });
+}
+
+
+//code 9.5
+dart main.dart
+
+
+/code 9.6
+
+/home/ss/flutter/bin/cache/dart-sdk/bin/dart --enable-vm-service:40505 /home/ss/IdeaProjects/bin/main.dart
+Observatory listening on http://127.0.0.1:40505/
+
+The server is alive on the above mentioned port and it's listening on 8080/
+
+Process finished with exit code 137 (interrupted by signal 9: SIGKILL)
+
+
+//code 9.7
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>A Dart WEB Example on Local Server</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+</head>
+
+<body>
+<h1>A Dart WEB Example on Local Server</h1>
+<a href="https://sanjibsinha.fun" about="It's my unofficial site" onclick="Click Me!">
+    Here is my unofficial site!
+</a>
+</body>
+</html>
+
+//code 9.8
+
+import 'dart:io';
+import 'dart:async';
+
+final File myFile = File("index.html");// we have used dart input/ouput library File() method
+	
+Future main() async {
+  var myServer = await HttpServer.bind(
+    '127.0.0.1',	
+    8080,
+  );
+  print("The server is alive on the above mentioned port and it's listening "
+      "on ${myServer.port}/");
+
+// we are going to use the ‘await’ from dart ‘async’ library
+  await for (HttpRequest myRequest in myServer) {
+
+    if(await myFile.exists()){
+      print("We're going to serve ${myFile.path}");
+      myRequest.response.headers.contentType = ContentType.html;
+
+      await myFile.openRead().pipe(myRequest.response);
+
+    }
+
+  }
+
+}
+
