@@ -1663,11 +1663,12 @@ print(customer);
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dart/Flutter Constructors tutorial with examples
  Last modified: January 16, 2020  bezkoder  Dart, Flutter
-In this tutorial, I will show you how to define and work with Constructors in Dart/Flutter. There are many types of Constructors that you will need to know when working with Dart class.
+	 In this tutorial, I will show you how to define and work with Constructors in Dart/Flutter.
+	 There are many types of Constructors that you will need to know when working with Dart class.
 
 
 
-Contents [hide]
+
 
 Dart Constructor methods
 Dart Constructor with Syntactic sugar
@@ -1683,7 +1684,9 @@ Named optional parameters
 Constant constructor
 Conclusion
 Further Reading
+	
 Dart Constructor methods
+	
 Constructor is a special method of Dart class which is automatically called when the object is created. The constructor is like a function with/without parameter but it doesn’t have a return type.
 
 For example, this is Customer class with constructor that has the same name:
@@ -1725,7 +1728,9 @@ class Customer {
 
   Customer(this.name, this.age, this.location);
 }
+	
 Multiple constructors in Dart/Flutter
+	
 How about the case you want to have more than one constructor. For example, there are 2 constructors you desire to use:
 
 Customer(String name, int age, String location) {
@@ -1799,9 +1804,11 @@ Yes, we can.
 Let’s take a look at Redirecting Constructor.
 
 
- 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 Redirecting Constructor
-We can redirect a constructor to another constructor in the same class by using a colon (:). Remember that body of Redirecting Constructor is empty.
+	
+	We can redirect a constructor to another constructor in the same class by using a colon (:).
+	Remember that body of Redirecting Constructor is empty.
 
 For example, I will rewrite Customer.empty() & Customer.withoutLocation() above.
 
@@ -1824,7 +1831,10 @@ print(customer1);
 var customer2 = Customer.withoutLocation("zkoder", 26);
 print(customer2);
 // Customer [name=zkoder,age=26,location=]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
 Factory Constructor in Dart/Flutter
+	
 We can use the factory keyword for a constructor that return an object instead of creating a new instance.
 
 class Customer {
@@ -1845,7 +1855,9 @@ class Customer {
 var customer = Customer.create();
 print(customer);
 // Customer [name=,age=0,location=]
+	
 Dart/Flutter Constructor with Optional parameters
+	
 We can define constructor with two types of parameters: required and optional. The required parameters (which we used in sections above) are listed first, followed by any optional parameters.
 
 Optional parameters can be Named or Positional.
@@ -1879,7 +1891,9 @@ print(customer1);
 var customer2 = Customer("zkoder");
 print(customer2);
 // Customer [name=zkoder,age=null,location=null]
+	
 Dart Constructor using Curly braces: Named optional parameters
+	
 We can also definie a constructor using curly braces { } to specify named parameters.
 
 class Customer {
@@ -1908,14 +1922,15 @@ print(customer1);
 var customer2 = Customer("zkoder");
 print(customer2);
 // Customer [name=zkoder,age=null,location=null]
+	
 You can see that the order of parameters does not matter. It can avoid confusion while passing value for the constructor which has many parameter.
-
 Dart/Flutter Constructor default value
 For the constructors with either Named or Positional parameters, we can use = to define default values.
-
 The default values must be compile-time constants. If we don’t provide value, the default value is null.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 Positional optional parameters
+	
 class Customer {
   String name;
   int age;
@@ -1941,7 +1956,10 @@ print(customer1);
 var customer2 = Customer("zkoder");
 print(customer2);
 // Customer [name=zkoder,age=null,location=US]
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
 Named optional parameters
+	
 class Customer {
   String name;
   int age;
@@ -1967,7 +1985,11 @@ print(customer1);
 var customer2 = Customer("zkoder");
 print(customer2);
 // Customer [name=zkoder,age=null,location=US]
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
 Constant constructor
+	
 If we want all intances of our class will never change, we can define a const constructor in which all fields are final.
 
 class ImmutableCustomer {
@@ -1989,6 +2011,230 @@ Happy Learning! See you again.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+	Constant Constructors
+Using a const constructor allows a class of objects that cannot be defined using a literal syntax to be assigned to a constant identifier.
 
+When using the const keyword for initialization, no matter how many times you instantiate an object with the same values, only one instance exists in memory. A constant class shares all the same instantiation restrictions as a constant object.
 
-  
+Class fields that are assigned using a const constructor must be marked as final. This allows new instances of the class to be instantiated by the const keyword or the new keyword.
+
+EXAMPLE 4.13
+class Location {
+  final int x;
+  final int y;
+  const Location(this.x, this.y);
+}
+
+main() {
+  const Location gate = const Location(400, 200);
+  const Location tower = const Location(500, 200);
+  const Location tube = const Location(400, 200);
+
+  //false – different values results on a new object
+  print(gate == tower);
+
+  //true – same class & values results in the same reference
+  print(gate == tube);
+
+  Location runway = new Location(400, 200);
+  Location tarmac = new Location(500, 200);
+  Location field = new Location(400, 200);
+  print(runway == tarmac); //false – new keyword results on a new object
+  print(runway == field); //false – new keyword results on a new object
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+Callable Classes
+	
+There is a special call() method which is very closely related to an operator overload because
+it allows classes to be called like if they were functions with the () operator.
+	
+ You can give call() as many parameters as you want as there are no restrictions
+on their types. The function can return something or it can simply be void.
+	
+Let’s give a look at this example.
+	
+class Example {
+double call(double a, double b) => a + b;
+}
+void main() {
+final ex = Example(); // 1.
+final value = ex(1.3, -2.2); // 2.
+
+	print("$value");
+}
+	
+1. Classic creation of an instance of the class
+2. The object ex can act like if it were a function. The call() method allows an object to be
+treated like a function.
+Any class that implements call() is said to be a callable class. In Dart, everything is an object
+and you’ve seen in 3.6.1 that even functions are objects. You can now understand why with the
+following example:
+void test(String something) {
+print(something);
+}
+
+	
+This is a typical void function asking for a single parameter.
+Actually, the above code can be converted into a callable class that overrides call() returning nothing and asking for a string.
+// Create this inside 'my_test.dart' for example
+class _Test {
+const _Test();
+void call(String something) {
+print(something);
+}
+}
+const test = _Test();
+// Somewhere else, for example in main.dart
+import 'package:myapp/my_test.dart';
+void main() {
+test("Hello");
+}
+	
+The function is nothing more than a package private class that overrides call() with a certain
+signature. Thanks to const test = _Test(); in the last line we’re "hiding" the class and
+exposing a callable object to be used as function.
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	Cloning objects
+	
+Even if it’s not mentioned in the official Dart documentation, there is a standard "pattern" to
+follow when it comes to cloning objects. Unlike Java, there is no clone() method to override
+but still you might need to create deep copies of objects:
+	
+class Person {
+	final String name;
+	final int age;
+	const Person({
+	required this.name,
+	required this.age,
+	});
+}
+void main() {
+	const me = const Person(
+	name: "Alberto",
+	age: 25
+	);
+	const anotherMe = me;
+	}
+As you already know, the variable anotherMe just holds a reference to me and thus they point
+to the same object. Changes applied to me will also reflect on anotherMe. If you want to make
+deep copies in Dart (cloning objects and making them independent), this is the way:
+	
+class Person {
+	final String name;
+	final int age;
+	const Person({
+	required this.name,
+	required this.age,
+	});
+Person copyWith({
+	String? name,
+	int? age,
+	}) => Person(
+	Flutter Complete Reference 101
+	Chapter 4. Classes
+	name: name ?? this.name,
+	age: age ?? this.age
+	);
+	@override
+	String toString() => "$name, $age";
+}
+	
+This method is called copyWith() by convention and it takes the same number (and name) of
+parameters required by the constructor. It creates a new, independent copy of the object (a
+clone) with the possibility to change some parameters:
+	
+const me = const Person(
+	name: "Alberto",
+	age: 25
+	);
+// Create a deep copy of 'me'.
+	
+final anotherMe = me.copyWith();
+// Create a deep copy of 'me' with a different age.
+	
+final futureMe = const.copyWith(age: 35);
+	
+print("$me"); // Alberto, 25
+print("$anotherMe"); // Alberto, 25
+print("$futureMe"); // Alberto, 35
+	
+Both anotherMe and futureMe have no side effects on me because the reference is not the same.
+In fact, copyWith() returns a fresh new instance by copying internal data. Let’s take a look at
+this line:
+	
+name: name ?? this.name,
+	
+Thanks to the ?? operator, if name is null then initialize the clone with value of this.name taken
+from the instance. In other words, if you don’t pass a custom name to copyWith(), by default a
+copy of this.name is made. Pay attention to generic containers and objects in general:
+	
+class Skills {...}
+class Person {
+	final List<Skills> skills;
+	Flutter Complete Reference 102
+	Chapter 4. Classes
+	const Person({
+	required this.skills
+	});
+Person copyWith({
+	List<Skills>? skills,
+	}) => Person(
+	skills: skills ?? this.skills
+	);
+}
+This code doesn’t do what you’d expect because List<T>, like any other generic container, is an
+object and not a primitive type. With the above code you’re just copying references and not
+making copies. The correct solution is the following:
+	
+Person(
+	skills: skills ?? this.skills.map((p) => p.copyWith()).toList();
+	);
+	
+In this way you’re making a copy of the entire list rather than passing a reference. The above
+code is just an one-liner way to iterate on each element of the source, making deep copies using
+copyWith and returning a new list. However, when the list is made up of primitive types, you
+could use a shortcut:
+	
+class Person {
+	final List<int> values;
+	const Person({
+	required this.values
+	});
+	
+Person copyWith({
+	List<int>? values,
+	}) => Person(
+	values: values ?? []..addAll(this.values)
+	);
+}
+Primitive types are automatically copied so instead of using map() (which would be perfectly fine
+as well) we can use addAll() for a shorter syntax. There is no difference however because it still
+iterates on every element of the source list. The same example also applies to Map<K, V> and
+Flutter Complete Reference
+	
+Classes
+	
+Set<K>. To sum it up, what you have to keep in mind is:
+• Deep copies in Dart are made using the copyWith() method. You can give it any other
+name but you’d better follow the conventions.
+• When making copies, be sure that classes (like generic containers) are deep copied using
+the convenient map((x) => x.copyWith()) strategy.
+• If you have a list of primitive types (like doubles or int) you can use the []..addAll()
+shortcut. Do this only with primitive types.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
