@@ -1274,38 +1274,6 @@ void test_age(int age) {
 
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Constructor
-  
-  
-  1. Initializr List
-  
-  import 'dart:math';
-
-class Position {
-  final int x;
-  final int y;
-  final double rad;
-
-  // An initializer list allows
-  // fields to be defined before the constructor body.
-  // This is required for final fields.
-  Position(int x, int y)
-      : this.x = x,
-        this.y = y,
-        rad = atan2(y, x);
-}
-
-main() {
-  var p = new Position(2, 3);
-  print('x: ${p.x} y: ${p.y}');
-  print('rad: ${p.rad}');
-}
-
-$ initializer_lists.dart
-x: 2 y: 3
-rad: 0.5880026035475675
 
 ----------------------------------------------------------------------------------
   
@@ -1587,24 +1555,439 @@ int test()=>123;
 It should produce the following output −
 
 hello 123 
- ------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Constructor
+  
+  
+  1. Initializr List
+  
+  import 'dart:math';
+
+class Position {
+  final int x;
+  final int y;
+  final double rad;
+
+  // An initializer list allows
+  // fields to be defined before the constructor body.
+  // This is required for final fields.
+  Position(int x, int y)
+      : this.x = x,
+        this.y = y,
+        rad = atan2(y, x);
+}
+
+main() {
+  var p = new Position(2, 3);
+  print('x: ${p.x} y: ${p.y}');
+  print('rad: ${p.rad}');
+}
+
+$ initializer_lists.dart
+x: 2 y: 3
+rad: 0.5880026035475675
+	
+2. example https://medium.com/flutter-community/deconstructing-dart-constructors-e3b553f583ef
+	
+-------------------------------------------------------------------------------------	
+	1.Default Constructer
+	
+	 SmartPhone(){}	
+-------------------------------------------------------------------------------------	
+	2.Parametrized Constructor
+		
+	SmartPhone(String name, int size, String color){
+		this.name = name;
+		this.size = size;
+		this.color = colore;
+	}
+
+---------------------------------------------------------------------------------------
+	3.Synthetic Sugar Constructor
+	
+	SmartPhone(this.name,this.size,this.color);
+	
+----------------------------------------------------------------------------------------
+Redirecting Constructor
+We can redirect a constructor to another constructor in the same class by using a colon (:). Remember that body of Redirecting Constructor is empty.
+
+For example, I will rewrite Customer.empty() & Customer.withoutLocation() above.
+
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  Customer(this.name, this.age, this.location);
+
+  // Redirecting constructors
+  Customer.empty() : this("", 0, "");
+  Customer.withoutLocation(String name, int age) : this(name, age, "");
+	Let’s run and check again:
+
+	var customer1 = Customer.empty();
+	print(customer1);
+	// Customer [name=,age=0,location=]
+
+	var customer2 = Customer.withoutLocation("zkoder", 26);
+	print(customer2);
+	// Customer [name=zkoder,age=26,location=]
+----------------------------------------------------------------------------------------------------
+
+Factory Constructor in Dart/Flutter
+We can use the factory keyword for a constructor that return an object instead of creating a new instance.
+
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  static final Customer origin = Customer("", 0, "");
+
+  // factory constructor
+  factory Customer.create() {
+    return origin;
+  }
+
+  @override
+  String toString() { ... }
+}
+var customer = Customer.create();
+print(customer);
+// Customer [name=,age=0,location=]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dart/Flutter Constructors tutorial with examples
+ Last modified: January 16, 2020  bezkoder  Dart, Flutter
+In this tutorial, I will show you how to define and work with Constructors in Dart/Flutter. There are many types of Constructors that you will need to know when working with Dart class.
 
 
 
+Contents [hide]
+
+Dart Constructor methods
+Dart Constructor with Syntactic sugar
+Multiple constructors in Dart/Flutter
+Redirecting Constructor
+Factory Constructor in Dart/Flutter
+Dart/Flutter Constructor with Optional parameters
+Dart Constructor using Square brackets: Positional optional parameters
+Dart Constructor using Curly braces: Named optional parameters
+Dart/Flutter Constructor default value
+Positional optional parameters
+Named optional parameters
+Constant constructor
+Conclusion
+Further Reading
+Dart Constructor methods
+Constructor is a special method of Dart class which is automatically called when the object is created. The constructor is like a function with/without parameter but it doesn’t have a return type.
+
+For example, this is Customer class with constructor that has the same name:
+
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  // constructor
+  Customer(String name, int age, String location) {
+    this.name = name;
+    this.age = age;
+    this.location = location;
+  }
+}
+Now you can create new object using a constructor.
+
+var customer = Customer("bezkoder", 26, "US");
+If we don’t define any constructor, the default constructor below will be created.
+
+Customer() {
+}
+Dart Constructor with Syntactic sugar
+If you use constructor with nornal syntax above, you need to write boilerplate to assign each argument to an instance variable.
+
+Dart supports syntactic sugar to make it easy.
+
+Bezkoder Programming Course
+Build a real world e-commerce application with NodeJS, ExpressJS, React & MySQL
+
+  
+
+ 
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  Customer(this.name, this.age, this.location);
+}
+Multiple constructors in Dart/Flutter
+How about the case you want to have more than one constructor. For example, there are 2 constructors you desire to use:
+
+Customer(String name, int age, String location) {
+  this.name = name;
+  this.age = age;
+  this.location = location;
+}
+
+Customer(this.name, this.age) {
+  this.name = name;
+  this.age = age;
+}
+But if you define both of them in a class, there will be a compiler error.
+
+Dart provides Named constructor that helps you implement multiple constructors with more clarity:
+
+class Customer {
+  // ...
+
+  Customer(String name, int age, String location) {
+    this.name = name;
+    this.age = age;
+    this.location = location;
+  }
+
+  // Named constructor - for multiple constructors
+  Customer.withoutLocation(this.name, this.age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  Customer.empty() {
+    name = "";
+    age = 0;
+    location = "";
+  }
+
+  @override
+  String toString() {
+    return "Customer [name=${this.name},age=${this.age},location=${this.location}]";
+  }
+}
+You can write it more simply with Syntactic sugar:
+
+Customer(this.name, this.age, this.location);
+
+Customer.withoutLocation(this.name, this.age);
+
+Customer.empty() {
+  name = "";
+  age = 0;
+  location = "";
+}
+Now we can create new Customer object by these methods.
+
+var customer = Customer("bezkoder", 26, "US");
+print(customer);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer1 = Customer.withoutLocation("zkoder", 26);
+print(customer1);
+// Customer [name=zkoder,age=26,location=null]
+
+var customer2 = Customer.empty();
+print(customer2);
+// Customer [name=,age=0,location=]
+So, is there any way to make Customer.empty() neat?
+And how to initialize an empty value for location field when calling Customer.withoutLocation() instead of null?
+
+Yes, we can.
+Let’s take a look at Redirecting Constructor.
 
 
+ 
+Redirecting Constructor
+We can redirect a constructor to another constructor in the same class by using a colon (:). Remember that body of Redirecting Constructor is empty.
 
+For example, I will rewrite Customer.empty() & Customer.withoutLocation() above.
 
+class Customer {
+  String name;
+  int age;
+  String location;
 
+  Customer(this.name, this.age, this.location);
 
+  // Redirecting constructors
+  Customer.empty() : this("", 0, "");
+  Customer.withoutLocation(String name, int age) : this(name, age, "");
+Let’s run and check again:
 
+var customer1 = Customer.empty();
+print(customer1);
+// Customer [name=,age=0,location=]
 
+var customer2 = Customer.withoutLocation("zkoder", 26);
+print(customer2);
+// Customer [name=zkoder,age=26,location=]
+Factory Constructor in Dart/Flutter
+We can use the factory keyword for a constructor that return an object instead of creating a new instance.
 
+class Customer {
+  String name;
+  int age;
+  String location;
 
+  static final Customer origin = Customer("", 0, "");
 
+  // factory constructor
+  factory Customer.create() {
+    return origin;
+  }
+
+  @override
+  String toString() { ... }
+}
+var customer = Customer.create();
+print(customer);
+// Customer [name=,age=0,location=]
+Dart/Flutter Constructor with Optional parameters
+We can define constructor with two types of parameters: required and optional. The required parameters (which we used in sections above) are listed first, followed by any optional parameters.
+
+Optional parameters can be Named or Positional.
+
+Dart Constructor using Square brackets: Positional optional parameters
+You can wrap one or more parameters in square brackets [ ] to make them as optional positional parameters.
+
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  // Positional optional parameters
+  Customer(this.name, [this.age, this.location]);
+
+  @override
+  String toString() {
+    return "Customer [name=${this.name},age=${this.age},location=${this.location}]";
+  }
+}
+Let’s make some test by calling constructor without the optional parameters:
+
+var customer = Customer("bezkoder", 26, "US");
+print(customer);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer1 = Customer("bezkoder", 26);
+print(customer1);
+// Customer [name=bezkoder,age=26,location=null]
+
+var customer2 = Customer("zkoder");
+print(customer2);
+// Customer [name=zkoder,age=null,location=null]
+Dart Constructor using Curly braces: Named optional parameters
+We can also definie a constructor using curly braces { } to specify named parameters.
+
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  // Named optional parameters
+  Customer(this.name, {this.age, this.location});
+
+  @override
+  String toString() {
+    return "Customer [name=${this.name},age=${this.age},location=${this.location}]";
+  }
+}
+When calling the constructor, we have to use parameter name to assign a value which separated with colan paramName: value.
+
+var customer = Customer("bezkoder", location: "US", age: 26);
+print(customer);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer1 = Customer("bezkoder", age: 26);
+print(customer1);
+// Customer [name=bezkoder,age=26,location=null]
+
+var customer2 = Customer("zkoder");
+print(customer2);
+// Customer [name=zkoder,age=null,location=null]
+You can see that the order of parameters does not matter. It can avoid confusion while passing value for the constructor which has many parameter.
+
+Dart/Flutter Constructor default value
+For the constructors with either Named or Positional parameters, we can use = to define default values.
+
+The default values must be compile-time constants. If we don’t provide value, the default value is null.
+
+Positional optional parameters
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  Customer(this.name, [this.age, this.location = "US"]);
+
+  @override
+  String toString() {
+    return "Customer [name=${this.name},age=${this.age},location=${this.location}]";
+  }
+}
+Now create some Customer objects, you can see that default value for age is null and for location is "US".
+
+var customer = Customer("bezkoder", 26, "US");
+print(customer);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer1 = Customer("bezkoder", 26);
+print(customer1);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer2 = Customer("zkoder");
+print(customer2);
+// Customer [name=zkoder,age=null,location=US]
+Named optional parameters
+class Customer {
+  String name;
+  int age;
+  String location;
+
+  Customer(this.name, {this.age, this.location = "US"});
+
+  @override
+  String toString() {
+    return "Customer [name=${this.name},age=${this.age},location=${this.location}]";
+  }
+}
+Let’s run to check default values for age & location.
+
+var customer = Customer("bezkoder", age: 26, location: "US");
+print(customer);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer1 = Customer("bezkoder", age: 26);
+print(customer1);
+// Customer [name=bezkoder,age=26,location=US]
+
+var customer2 = Customer("zkoder");
+print(customer2);
+// Customer [name=zkoder,age=null,location=US]
+Constant constructor
+If we want all intances of our class will never change, we can define a const constructor in which all fields are final.
+
+class ImmutableCustomer {
+  final String name;
+  final int age;
+  final String location;
+
+  // Constant constructor
+  const ImmutableCustomer(this.name, this.age, this.location);
+}
+Now we can put the const keyword before the constructor name:
+
+var immutableCustomer = const ImmutableCustomer("zkoder", 26, "US");
+// immutableCustomer.name = ... // compile error
+Conclusion
+Today we’ve learned many types of Constructors in Dart/Flutter, from normal syntax to syntactic sugar, from single constructor to multiple constructors using Dart Named constructor, from Redirecting to factory constructor, from required parameters to optional parameters. You also look at how to define a const constructor in a class.
+
+Happy Learning! See you again.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
